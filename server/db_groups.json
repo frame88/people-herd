@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "id": 1,
+      "name": "Gruppo Admin",
+      "description": "Questo è un consiglio di amministrazione. Solo chi ha il grado admin può accedere",
+      "role": 0
+    },
+    {
+      "id": 2,
+      "name": "Gruppo Associate",
+      "description": "Questo è un gruppo dedicato ai soci, clienti, dipendenti, collaboratori.",
+      "role": 1
+    },
+    {
+      "id": 3,
+      "name": "Gruppo Watcher",
+      "description": "Questo è un gruppo dedicato ai potenziali clienti o ha chi ha semplice bisogno di informazioni.",
+      "role": 2
+    }
+  ]
+}

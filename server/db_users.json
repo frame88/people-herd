@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "name": "Luca",
+      "surname": "Cincischia",
+      "username": "cincio",
+      "password": "sgaramush856",
+      "group": 4,
+      "mail": "cinciulla@gmail.com",
+      "phone": "3265656565",
+      "birthDate": "08/08/1997",
+      "birthPlace": "Trieste",
+      "address": "Via metatarso, 3",
+      "taxId": "LZZFNC97M08H501I"
+    },
+    {
+      "id": 1,
+      "name": "Peter",
+      "surname": "Dirty",
+      "username": "putridir",
+      "password": "sosia%%%",
+      "group": 3,
+      "mail": "peter@gmail.com",
+      "phone": "3219090212",
+      "birthDate": "08/06/1999",
+      "birthPlace": "Roma",
+      "address": "Corso Trieste, 128",
+      "taxId": "FGGJKL88M02H501I"
+    },
+    {
+      "id": 2,
+      "name": "Frank",
+      "surname": "Sinatra",
+      "username": "franky",
+      "password": "mafialover3",
+      "group": 4,
+      "mail": "sinfrank@gmail.com",
+      "phone": "3322365550",
+      "birthDate": "14/09/1994",
+      "birthPlace": "06/06/2001",
+      "address": "Via dalle palle, 8",
+      "taxId": "FMMKOI22M02H501I"
+    },
+    {
+      "id": 3,
+      "name": "Giorgio",
+      "surname": "Istria",
+      "username": "Istrice",
+      "password": "minestrina756",
+      "group": 4,
+      "mail": "porcospino@gmail.com",
+      "phone": "3344465550",
+      "birthDate": "12/06/1961",
+      "birthPlace": "Milano",
+      "address": "Via angioma, 16",
+      "taxId": "CSSARI22M16H501I"
+    }
+  ]
+}
