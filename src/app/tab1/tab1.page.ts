@@ -1,11 +1,7 @@
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatTableDataSource} from '@angular/material/table';
-import { PeriodicElement } from '../models/IPeriodic';
+import { Component } from '@angular/core';
 
-import { IGroups } from '../models/IGroups';
 import { HttpClient } from '@angular/common/http';
-let ELEMENT_DATA: IGroups[] | any = [];
+import { CentralService } from '../services/central.service';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -13,24 +9,14 @@ let ELEMENT_DATA: IGroups[] | any = [];
 })
 export class Tab1Page {
 
-  displayedColumns: string[] = ['id', 'name', 'description', 'roule'];
-  groups: IGroups[] | any;
-  dataSource = ELEMENT_DATA;
 
-  constructor(private http: HttpClient) {
-    this.getGroups();
+  constructor(
+    public http: HttpClient,
+    public central: CentralService
+    ) {
+    this.central.getGroups();
+    console.log('sono nel tab1 e ho preso i dati dal servizio', this.central.groups);
   }
-
-
-  getGroups() {
-    this.http.get<IGroups>('http://localhost:3000/groups')
-    .subscribe((result: IGroups) => {
-        ELEMENT_DATA = result;
-        console.log(result);
-        console.log('element data', ELEMENT_DATA);
-    });
-  }
-
 
 }
 

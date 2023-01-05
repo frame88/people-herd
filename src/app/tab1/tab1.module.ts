@@ -6,8 +6,7 @@ import { Tab1Page } from './tab1.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
-import {MatTableModule} from '@angular/material/table';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   imports: [
     IonicModule,
@@ -15,8 +14,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     FormsModule,
     ExploreContainerComponentModule,
     Tab1PageRoutingModule,
-    MatTableModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   declarations: [Tab1Page]
 })

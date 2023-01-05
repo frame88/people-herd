@@ -7,11 +7,17 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <table>
+    <tr id="labels">
+      <th *ngFor="let i of central.users_labels" style="width: 20vw; text-align: start;">{{i}}</th>
+    </tr>
+    <tr *ngFor="let i of central.users">
+      <td>{{i.id}}</td>
+      <td>{{i.name}}</td>
+      <td>{{i.surname}}</td>
+      <td>{{i.username}}</td>
+      <td>{{i.mail}}</td>
+      <td>{{i.group}}</td>
+    </tr>
+  </table>
 </ion-content>
