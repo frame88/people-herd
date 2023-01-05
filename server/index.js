@@ -10,11 +10,11 @@ module.exports = function() {
 
   return {
 
-    users: users,
+    users: users.users,
 
-    roles: roles,
+    roles: roles.roles,
 
-    groups: groups
+    groups: groups.groups
 
   }
 
