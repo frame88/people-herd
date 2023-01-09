@@ -5,14 +5,19 @@
 </ion-header>
 
 <ion-content>
-  <ion-row>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A laborum rem expedita explicabo tenetur. Eaque ipsam eum laboriosam praesentium possimus consequatur. Quisquam sunt sint labore. Ipsa quas est a recusandae.</p>
-  </ion-row>
+
+  <div *ngFor="let i of central.groups" class="ion-margin">
+    <!-- <div *ngIf="users.i">Content to render when condition is true.</div> -->
+    <div *ngIf="i.id === this.iddi">
+      <h1 style="margin-bottom: 0; color: rgb(166, 166, 255);">{{i.name}}</h1>
+      <h5 style="color: rgb(204, 204, 204);">{{i.description}}</h5>
+    </div>
+  </div>
 
   <div *ngFor="let i of central.users">
     <!-- <div *ngIf="users.i">Content to render when condition is true.</div> -->
     <div *ngIf="i.group === this.iddi">
-      <span>{{i.name }}</span>
+      <span>{{i.name}}</span>
     </div>
   </div>
 

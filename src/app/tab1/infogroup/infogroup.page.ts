@@ -19,9 +19,11 @@ export class InfogroupPage implements OnInit {
   ) {
     //console.log('total users', this.central.users);
     console.log('id = ', this.iddi);
-   }
+  }
 
   ngOnInit() {
+    this.central.getUsers();
+    this.central.getGroups();
   }
 
 }

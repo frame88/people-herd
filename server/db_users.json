@@ -55,6 +55,20 @@
       "birthPlace": "Milano",
       "address": "Via Roma, 16",
       "taxId": "CSSARI22M16H501I"
+    },
+    {
+      "id": 4,
+      "name": "Chicco",
+      "surname": "Riso",
+      "username": "Istrice",
+      "password": "minestrina756",
+      "group": 1,
+      "mail": "porcospino@gmail.com",
+      "phone": "3344465550",
+      "birthDate": "12/06/1961",
+      "birthPlace": "Milano",
+      "address": "Via Roma, 16",
+      "taxId": "CSSARI22M16H501I"
     }
   ]
 }
