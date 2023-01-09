@@ -6,7 +6,33 @@
   </ion-toolbar>
 </ion-header>
 
+
+
 <ion-content [fullscreen]="true">
+  <div style="display: flex; flex-wrap: wrap;">
+
+    <ion-button id="new-role-btn" class="ion-margin" style="text-transform: uppercase;">aggiungi un nuovo
+      ruolo</ion-button>
+    <ion-popover trigger="new-role-btn">
+      <ng-template>
+        <ion-content class="ion-padding">
+          <form #g="ngForm" (submit)="central.addRole(g)" class="example-form">
+            <mat-form-field class="example-full-width">
+              <mat-label>Nome</mat-label>
+              <input matInput placeholder="Es. Mario" name="title" [ngModel] required>
+            </mat-form-field>
+
+            <ion-button type="submit">
+              Conferma
+            </ion-button>
+          </form>
+
+        </ion-content>
+      </ng-template>
+    </ion-popover>
+
+  </div>
+
   <table>
     <tr id="labels">
       <th *ngFor="let i of central.roles_labels" style="width: 20vw; text-align: start;">{{i}}</th>
@@ -16,6 +42,7 @@
       <td>{{i.title}}</td>
       <td>{{i.description}}</td>
       <td>{{i.default}}</td>
+      <ion-icon class="trash" name="trash-outline" (click)="central.deleteRole(i)"></ion-icon>
     </tr>
   </table>
 </ion-content>

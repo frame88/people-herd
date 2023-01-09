@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 export class Tab3Page {
 
   constructor(
-    public http: HttpClient,
+    private http: HttpClient,
     public central: CentralService
   ) {
     this.central.getRoles();

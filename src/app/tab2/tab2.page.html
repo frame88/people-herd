@@ -7,17 +7,54 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <div style="display: flex; flex-wrap: wrap;">
+
+    <ion-button id="trigger-button" class="ion-margin" style="text-transform: uppercase;">aggiungi un nuovo membro</ion-button>
+    <ion-popover trigger="trigger-button">
+      <ng-template>
+        <ion-content class="ion-padding">
+          <form #f="ngForm" (submit)="central.addUsers(f)" class="example-form">
+            <mat-form-field class="example-full-width">
+              <mat-label>Nome</mat-label>
+              <input matInput placeholder="Es. Mario" name="name" [ngModel] required>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Cognome</mat-label>
+              <input matInput placeholder="Es. Rossi" name="surname" [ngModel] required>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Nickname</mat-label>
+              <input matInput placeholder="Es. Pippo" name="username" [ngModel]>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Mail</mat-label>
+              <input matInput placeholder="Es. mario.rossi@gmail.com" name="mail" [ngModel]>
+            </mat-form-field>
+
+            <ion-button type="submit">
+              Conferma
+            </ion-button>
+          </form>
+
+        </ion-content>
+      </ng-template>
+    </ion-popover>
+
+  </div>
+
   <table>
     <tr id="labels">
       <th *ngFor="let i of central.users_labels" style="width: 20vw; text-align: start;">{{i}}</th>
     </tr>
-    <tr *ngFor="let i of central.users">
+    <tr *ngFor="let i of central.users" style="position: relative;">
       <td>{{i.id}}</td>
       <td>{{i.name}}</td>
       <td>{{i.surname}}</td>
       <td>{{i.username}}</td>
       <td>{{i.mail}}</td>
       <td>{{i.group}}</td>
+      <ion-icon class="trash" name="trash-outline" (click)="central.deleteUsers(i)"></ion-icon>
     </tr>
   </table>
+
 </ion-content>

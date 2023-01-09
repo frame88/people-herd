@@ -10,7 +10,7 @@ export class Tab2Page {
 
   constructor(
     public central: CentralService,
-    public http: HttpClient
+    private http: HttpClient
   ) {
     this.central.getUsers();
   }

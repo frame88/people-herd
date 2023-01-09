@@ -6,7 +6,33 @@
   </ion-toolbar>
 </ion-header>
 
+
+
 <ion-content [fullscreen]="true" class="ion-padding">
+  <div style="display: flex; flex-wrap: wrap;">
+
+    <ion-button id="new-group-btn" class="ion-margin" style="text-transform: uppercase;">aggiungi un nuovo
+      gruppo</ion-button>
+    <ion-popover trigger="new-group-btn">
+      <ng-template>
+        <ion-content class="ion-padding">
+          <form #f="ngForm" (submit)="central.addGroup(f)" class="example-form">
+            <mat-form-field class="example-full-width">
+              <mat-label>Nome</mat-label>
+              <input matInput placeholder="Es. Mario" name="name" [ngModel] required>
+            </mat-form-field>
+
+            <ion-button type="submit">
+              Conferma
+            </ion-button>
+          </form>
+
+        </ion-content>
+      </ng-template>
+    </ion-popover>
+
+  </div>
+
   <table>
     <tr id="labels">
       <th *ngFor="let i of central.groups_labels" style="width: 20vw; text-align: start;">{{i}}</th>
@@ -16,6 +42,7 @@
       <td>{{i.name}}</td>
       <td>{{i.role}}</td>
       <td>{{i.description}}</td>
+      <ion-icon class="trash" name="trash-outline" (click)="central.deleteGroups(i)"></ion-icon>
     </tr>
   </table>
 </ion-content>

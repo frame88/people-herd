@@ -6,7 +6,8 @@ import { Tab1Page } from './tab1.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import {MatInputModule} from '@angular/material/input';
+
 @NgModule({
   imports: [
     IonicModule,
@@ -14,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ExploreContainerComponentModule,
     Tab1PageRoutingModule,
-    HttpClientModule,
+    MatInputModule
   ],
   declarations: [Tab1Page]
 })
