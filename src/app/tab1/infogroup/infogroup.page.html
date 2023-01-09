@@ -11,7 +11,9 @@
 
   <div *ngFor="let i of central.users">
     <!-- <div *ngIf="users.i">Content to render when condition is true.</div> -->
-    <span>{{i.id}}</span>
+    <div *ngIf="i.group === this.iddi">
+      <span>{{i.name }}</span>
+    </div>
   </div>
 
 </ion-content>
