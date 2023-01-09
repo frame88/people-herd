@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>infogroup</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A laborum rem expedita explicabo tenetur. Eaque ipsam eum laboriosam praesentium possimus consequatur. Quisquam sunt sint labore. Ipsa quas est a recusandae.</p>
+  </ion-row>
+
+  <div *ngFor="let i of central.users">
+    <!-- <div *ngIf="users.i">Content to render when condition is true.</div> -->
+    <span>{{i.id}}</span>
+  </div>
+
+</ion-content>

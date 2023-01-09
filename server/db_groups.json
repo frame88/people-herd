@@ -3,20 +3,20 @@
     {
       "id": 1,
       "name": "Admin",
-      "description": "Questo è un consiglio di amministrazione. Solo chi ha il grado admin può accedere",
-      "role": 0
+      "description": "Il consiglio di amministrazione. Solo chi ha il grado admin può accedere.",
+      "role": 1
     },
     {
       "id": 2,
       "name": "Associate",
-      "description": "Questo è un gruppo dedicato ai soci, clienti, dipendenti, collaboratori.",
-      "role": 1
+      "description": "Il gruppo dedicato ai soci, clienti, dipendenti, collaboratori.",
+      "role": 2
     },
     {
       "id": 3,
       "name": "Watcher",
-      "description": "Questo è un gruppo dedicato ai potenziali clienti o ha chi ha semplice bisogno di informazioni.",
-      "role": 2
+      "description": "Il gruppo dedicato ai potenziali clienti o chi ha semplice bisogno di informazioni.",
+      "role": 3
     }
   ]
 }

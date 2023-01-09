@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 import { CentralService } from '../services/central.service';
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -9,10 +11,10 @@ import { CentralService } from '../services/central.service';
 })
 export class Tab1Page {
 
-
   constructor(
     private http: HttpClient,
-    public central: CentralService
+    public central: CentralService,
+    private activatedRoute: ActivatedRoute
     ) {
     this.central.getGroups();
   }

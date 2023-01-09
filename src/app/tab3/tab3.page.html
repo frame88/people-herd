@@ -22,6 +22,11 @@
               <input matInput placeholder="Es. Mario" name="title" [ngModel] required>
             </mat-form-field>
 
+            <mat-form-field class="example-full-width">
+              <mat-label>Descrizione</mat-label>
+              <input matInput placeholder="Es. Ruolo di amministratore" name="description" [ngModel]>
+            </mat-form-field>
+
             <ion-button type="submit">
               Conferma
             </ion-button>
@@ -42,7 +47,7 @@
       <td>{{i.title}}</td>
       <td>{{i.description}}</td>
       <td>{{i.default}}</td>
-      <ion-icon class="trash" name="trash-outline" (click)="central.deleteRole(i)"></ion-icon>
+      <ion-icon class="trash" name="trash-outline" (click)="central.deleteRole(i)" [style.display]="i.id < 3 ? 'none' : 'visible'"></ion-icon>
     </tr>
   </table>
 </ion-content>

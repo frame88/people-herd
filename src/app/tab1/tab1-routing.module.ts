@@ -6,7 +6,16 @@ const routes: Routes = [
   {
     path: '',
     component: Tab1Page,
+  },
+  {
+    path: 'infogroup',
+    loadChildren: () => import('./infogroup/infogroup.module').then( m => m.InfogroupPageModule)
+  },
+  {
+    path: 'tabs/tab1/infogroup/:id',
+    loadChildren: () => import('./infogroup/infogroup.module').then( m => m.InfogroupPageModule)
   }
+
 ];
 
 @NgModule({
