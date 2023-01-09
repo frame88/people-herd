@@ -37,10 +37,10 @@
     <tr id="labels">
       <th *ngFor="let i of central.groups_labels" style="width: 20vw; text-align: start;">{{i}}</th>
     </tr>
-    <tr *ngFor="let i of central.groups">
+    <tr *ngFor="let i of central.groups" style="position: relative;">
       <td>{{i.id}}</td>
-      <td>{{i.name}}</td>
-      <td>{{i.role}}</td>
+      <td class="txt-capital">Gruppo {{i.name}}</td>
+      <!-- <td>{{i.role}}</td> -->
       <td>{{i.description}}</td>
       <ion-icon class="trash" name="trash-outline" (click)="central.deleteGroups(i)"></ion-icon>
     </tr>

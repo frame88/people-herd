@@ -15,12 +15,16 @@
         <ion-content class="ion-padding">
           <form #f="ngForm" (submit)="central.addUsers(f)" class="example-form">
             <mat-form-field class="example-full-width">
+              <mat-label>Gruppo</mat-label>
+              <input matInput placeholder="Es. Dopolavoro" name="group" [ngModel] required>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
               <mat-label>Nome</mat-label>
               <input matInput placeholder="Es. Mario" name="name" [ngModel] required>
             </mat-form-field>
             <mat-form-field class="example-full-width">
               <mat-label>Cognome</mat-label>
-              <input matInput placeholder="Es. Rossi" name="surname" [ngModel] required>
+              <input matInput placeholder="Es. Rossi" name="surname" [ngModel]>
             </mat-form-field>
             <mat-form-field class="example-full-width">
               <mat-label>Nickname</mat-label>
@@ -30,7 +34,6 @@
               <mat-label>Mail</mat-label>
               <input matInput placeholder="Es. mario.rossi@gmail.com" name="mail" [ngModel]>
             </mat-form-field>
-
             <ion-button type="submit">
               Conferma
             </ion-button>
@@ -48,9 +51,9 @@
     </tr>
     <tr *ngFor="let i of central.users" style="position: relative;">
       <td>{{i.id}}</td>
-      <td>{{i.name}}</td>
-      <td>{{i.surname}}</td>
-      <td>{{i.username}}</td>
+      <td class="txt-capital">{{i.name}}</td>
+      <td class="txt-capital">{{i.surname}}</td>
+      <td class="txt-capital">{{i.username}}</td>
       <td>{{i.mail}}</td>
       <td>{{i.group}}</td>
       <ion-icon class="trash" name="trash-outline" (click)="central.deleteUsers(i)"></ion-icon>

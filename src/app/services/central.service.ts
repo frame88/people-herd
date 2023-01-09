@@ -11,7 +11,7 @@ import { NgForm } from '@angular/forms';
 })
 export class CentralService {
   //tables labels
-  groups_labels: string[] = ['id', 'nome', 'ruolo', 'descrizione'];
+  groups_labels: string[] = ['id', 'nome', 'descrizione'];
   users_labels: string[] = ['id', 'nome', 'cognome', 'nickname', 'mail', 'gruppo'];
   roles_labels: string[] = ['id', 'titolo', 'descrizione', 'default'];
 
@@ -24,6 +24,7 @@ export class CentralService {
     private http: HttpClient
   ) { }
 
+  //_______GET
   getGroups() {
     this.http.get<IGroups>('http://localhost:3000/groups')
     .subscribe((result: IGroups) => {
@@ -48,6 +49,7 @@ export class CentralService {
     });
   }
 
+  //_______POST
   addUsers(form: NgForm) {
     this.http.post<IUsers>(`http://localhost:3000/users`, form.value)
     .subscribe(result => {
@@ -76,6 +78,7 @@ export class CentralService {
     });
   }
 
+  //_______DELETE
   deleteGroups(users: IGroups) {
     this.http.delete(`http://localhost:3000/groups/${users.id}`)
       .subscribe(() => {

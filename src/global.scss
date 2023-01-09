@@ -26,8 +26,11 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 /*
-tabelle
+TABELLE
 */
+.txt-capital {
+  text-transform: capitalize;
+}
 
 table {
   width: 100vw;
@@ -62,6 +65,7 @@ td {
   margin-top: 15px;
 }
 
+// FORM
 .example-form {
   min-width: 150px;
   max-width: 200px;
@@ -71,3 +75,4 @@ td {
 .example-full-width {
   width: 100%;
 }
+
