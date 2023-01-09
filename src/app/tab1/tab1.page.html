@@ -22,6 +22,11 @@
               <input matInput placeholder="Es. Mario" name="name" [ngModel] required>
             </mat-form-field>
 
+            <mat-form-field class="example-full-width">
+              <mat-label>Ruolo</mat-label>
+              <input matInput placeholder="Es. 0" name="role" [ngModel] required>
+            </mat-form-field>
+
             <ion-button type="submit">
               Conferma
             </ion-button>
@@ -42,7 +47,7 @@
       <td class="txt-capital">Gruppo {{i.name}}</td>
       <!-- <td>{{i.role}}</td> -->
       <td>{{i.description}}</td>
-      <ion-icon class="trash" name="trash-outline" (click)="central.deleteGroups(i)"></ion-icon>
+      <ion-icon class="trash" name="trash-outline" (click)="central.deleteGroups(i)" [style.display]="i.role < 3 ? 'none' : null"></ion-icon>
     </tr>
   </table>
 </ion-content>
