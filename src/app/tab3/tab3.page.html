@@ -9,7 +9,7 @@
 
 
 <ion-content [fullscreen]="true">
-  
+
   <div *ngIf="central.error"
     style=" padding:1em ;text-align: center; color: white; background-color: rgb(255, 115, 115);">
     ERROR
@@ -18,8 +18,8 @@
   </div>
 
   <div style="display: flex; flex-wrap: wrap;">
-    <ion-button id="new-role-btn" class="ion-margin" style="text-transform: uppercase;">aggiungi un nuovo
-      ruolo</ion-button>
+    <button id="new-role-btn" class="ion-margin purple-btn" style="text-transform: uppercase;">aggiungi un nuovo
+      ruolo</button>
     <ion-popover trigger="new-role-btn">
       <ng-template>
         <ion-content class="ion-padding">
@@ -34,9 +34,9 @@
               <input matInput placeholder="Es. Ruolo di amministratore" name="description" [ngModel]>
             </mat-form-field>
 
-            <ion-button type="submit">
+            <button class="conf" type="submit">
               Conferma
-            </ion-button>
+            </button>
           </form>
 
         </ion-content>

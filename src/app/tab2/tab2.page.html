@@ -15,7 +15,7 @@
 
   <div style="display: flex; flex-wrap: wrap;">
 
-    <ion-button id="trigger-button" class="ion-margin" style="text-transform: uppercase;">aggiungi un nuovo membro</ion-button>
+    <button id="trigger-button" class="purple-btn ion-margin">aggiungi un nuovo membro</button>
     <ion-popover trigger="trigger-button">
       <ng-template>
         <ion-content class="ion-padding">
@@ -40,9 +40,9 @@
               <mat-label>Mail</mat-label>
               <input matInput placeholder="Es. mario.rossi@gmail.com" name="mail" [ngModel]>
             </mat-form-field>
-            <ion-button type="submit">
+            <button type="submit" class="conf">
               Conferma
-            </ion-button>
+            </button>
           </form>
 
         </ion-content>

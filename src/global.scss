@@ -92,7 +92,7 @@ td {
 }
 
 
-.purple-btn, .green-btn {
+.purple-btn, .conf {
   background-color: rgb(166, 166, 255);
   padding: 1em;
   margin: 1em;
@@ -104,4 +104,9 @@ td {
     transform: scale(0.9);
     transition-duration: 0.2s;
   }
+}
+
+.conf {
+  border-radius: 15px;
+  margin: 0;
 }
