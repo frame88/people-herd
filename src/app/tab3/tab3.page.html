@@ -45,16 +45,18 @@
 
   </div>
 
-  <table>
-    <tr id="labels">
-      <th *ngFor="let i of central.roles_labels" style="width: 20vw; text-align: start;">{{i}}</th>
-    </tr>
-    <tr *ngFor="let i of central.roles">
-      <td>{{i.id}}</td>
-      <td>{{i.title}}</td>
-      <td>{{i.description}}</td>
-      <td>{{i.default}}</td>
-      <ion-icon class="trash" name="trash-outline" (click)="central.deleteRole(i)" [style.display]="i.id < 3 ? 'none' : 'visible'"></ion-icon>
-    </tr>
-  </table>
+  <div class="margin: 2em;">
+    <table>
+      <tr id="labels" style='border: 3px solid white; padding: 1em;'>
+        <th *ngFor="let i of central.roles_labels" style="width: 20vw; text-align: start;">{{i}}</th>
+      </tr>
+      <tr *ngFor="let i of central.roles">
+        <td>{{i.id}}</td>
+        <td>{{i.title}}</td>
+        <td>{{i.description}}</td>
+        <td>{{i.default}}</td>
+        <ion-icon class="trash" name="trash-outline" (click)="central.deleteRole(i)" [style.display]="i.id < 3 ? 'none' : 'visible'"></ion-icon>
+      </tr>
+    </table>
+  </div>
 </ion-content>

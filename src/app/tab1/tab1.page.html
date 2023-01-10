@@ -50,17 +50,19 @@
 
   </div>
 
-  <table>
-    <tr style="border: 3px solid white; width: 68%; border-radius: 25px; padding: 1em;" id="labels">
-      <th *ngFor="let i of central.groups_labels" style="width: 20vw; text-align: start;">{{i}}</th>
-    </tr>
-    <tr style="border: 3px solid white; width: 68%; border-radius: 25px;" *ngFor="let i of central.groups" style="position: relative;">
-      <td>{{i.id}}</td>
-      <td class="txt-capital td-hover" [routerLink]="['tabs/tab1/infogroup', i.id]">Gruppo {{i.name}}</td>
-      <!-- <td>{{i.role}}</td> -->
-      <td>{{i.description}}</td>
-      <td>{{i.role}}</td>
-      <ion-icon class="trash" name="trash-outline" (click)="central.deleteGroups(i)" [style.display]="i.role < 4 ? 'none' : null"></ion-icon>
-    </tr>
-  </table>
+  <div style="margin: 2em;">
+    <table>
+      <tr class="labels">
+        <th *ngFor="let i of central.groups_labels">{{i}}</th>
+      </tr>
+      <tr style="width: 68%;" *ngFor="let i of central.groups" style="border-top: 1px solid white;">
+        <td>{{i.id}}</td>
+        <td class="txt-capital td-hover" [routerLink]="['tabs/tab1/infogroup', i.id]">Gruppo {{i.name}}</td>
+        <!-- <td>{{i.role}}</td> -->
+        <td style="padding-right: 10px;">{{i.description}}</td>
+        <td>{{i.role}}</td>
+        <ion-icon class="trash" name="trash-outline" (click)="central.deleteGroups(i)" [style.display]="i.role < 4 ? 'none' : null"></ion-icon>
+      </tr>
+    </table>
+  </div>
 </ion-content>

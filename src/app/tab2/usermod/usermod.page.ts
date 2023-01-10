@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { CentralService } from 'src/app/services/central.service';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-usermod',
   templateUrl: './usermod.page.html',
@@ -17,12 +18,11 @@ export class UsermodPage implements OnInit {
     private http: HttpClient,
     private activatedRoute: ActivatedRoute
 
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.central.getUsers();
     this.central.getGroups();
-
   }
 
 }

@@ -118,4 +118,17 @@ export class CentralService {
         );
     }
 
+    edit(form: NgForm, id: number) {
+      console.log('edit form', form);
+      console.log('edit id', id);
+      console.log(form.value)
+      this.http.patch<IUsers>(`${this.url}/users/${id}`, form.value)
+        .subscribe(res => {
+        const index = this.users.findIndex((d: { id: any; }) => d.id === this.users.id)
+        this.users[index] = res;
+        this.getUsers();
+    });
+  }
+
+
   }

@@ -7,13 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { UsermodPageRoutingModule } from './usermod-routing.module';
 
 import { UsermodPage } from './usermod.page';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    UsermodPageRoutingModule
+    UsermodPageRoutingModule,
+    MatInputModule
+
   ],
   declarations: [UsermodPage]
 })

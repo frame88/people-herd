@@ -51,20 +51,22 @@
 
   </div>
 
-  <table>
-    <tr id="labels">
-      <th *ngFor="let i of central.users_labels" style="width: 20vw; text-align: start;">{{i}}</th>
-    </tr>
-    <tr *ngFor="let i of central.users" style="position: relative; cursor: pointer;"
-      [routerLink]="['tabs/tab2/usermod', i.id]">
-      <td>{{i.id}}</td>
-      <td class="txt-capital">{{i.name}}</td>
-      <td class="txt-capital">{{i.surname}}</td>
-      <td class="txt-capital">{{i.username}}</td>
-      <td>{{i.mail}}</td>
-      <td>{{i.group}}</td>
-      <ion-icon class="trash" name="trash-outline" (click)="central.deleteUsers(i)"></ion-icon>
-    </tr>
-  </table>
+  <div style="margin: 2em;">
+    <table>
+      <tr class="labels">
+        <th *ngFor="let i of central.users_labels" style="width: 20vw; text-align: start;">{{i}}</th>
+      </tr>
+      <tr *ngFor="let i of central.users" style="position: relative; cursor: pointer;"
+        [routerLink]="['tabs/tab2/usermod', i.id]">
+        <td>{{i.id}}</td>
+        <td class="txt-capital">{{i.name}}</td>
+        <td class="txt-capital">{{i.surname}}</td>
+        <td class="txt-capital">{{i.username}}</td>
+        <td>{{i.mail}}</td>
+        <td>{{i.group}}</td>
+        <ion-icon class="trash" name="trash-outline" (click)="central.deleteUsers(i)"></ion-icon>
+      </tr>
+    </table>
+  </div>
 
 </ion-content>
