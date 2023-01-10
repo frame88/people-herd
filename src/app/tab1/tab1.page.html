@@ -18,8 +18,8 @@
 
   <div style="display: flex; flex-wrap: wrap;">
 
-    <ion-button id="new-group-btn" class="ion-margin" style="text-transform: uppercase;">aggiungi un nuovo
-      gruppo</ion-button>
+    <button id="new-group-btn" class="purple-btn">aggiungi un nuovo
+      gruppo</button>
     <ion-popover trigger="new-group-btn">
       <ng-template>
         <ion-content class="ion-padding">
@@ -39,9 +39,9 @@
               <input matInput placeholder="Es. gruppo del dopolavoro" name="description" [ngModel] >
             </mat-form-field>
 
-            <ion-button type="submit">
+            <button class="green-btn" type="submit">
               Conferma
-            </ion-button>
+            </button>
           </form>
 
         </ion-content>

@@ -26,4 +26,15 @@ export class InfogroupPage implements OnInit {
     this.central.getGroups();
   }
 
+  // cercaUsers(id: number, array: any) {
+  //   const users = this.central.users;
+  //   for (let index = 0; index < array.length; index++) {
+  //     const element = array[index];
+  //     if () {
+
+  //     }
+
+  //   }
+  // }
+
 }

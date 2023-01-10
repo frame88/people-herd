@@ -28,9 +28,6 @@
 /*
 TABELLE
 */
-.txt-capital {
-  text-transform: capitalize;
-}
 
 table {
   width: 100vw;
@@ -90,3 +87,21 @@ td {
   width: 100%;
 }
 
+.txt-capital {
+  text-transform: capitalize;
+}
+
+
+.purple-btn, .green-btn {
+  background-color: rgb(166, 166, 255);
+  padding: 1em;
+  margin: 1em;
+  border-radius: 3px;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: rgb(141, 141, 218);
+    transform: scale(0.9);
+    transition-duration: 0.2s;
+  }
+}
