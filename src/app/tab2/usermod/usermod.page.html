@@ -6,12 +6,18 @@
 
 <ion-content>
 
-  <div style="display: flex; flex-wrap: wrap;">
+  <div>
+    <button class="txt-capital purple-btn" routerLink="/tabs/tab1">
+      indietro
+    </button>
     <button id="new-role-btn"
       class="ion-margin purple-btn"
       style="text-transform: uppercase;">
       aggiorna utente
     </button>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap;">
     <ion-popover trigger="new-role-btn">
       <ng-template>
         <ion-content class="ion-padding">
@@ -29,7 +35,6 @@
         </ion-content>
       </ng-template>
     </ion-popover>
-
   </div>
 
 
@@ -47,6 +52,37 @@
       <span>indirizzo: {{item.address}}</span>
       <span>cod. fiscale: {{item.taxId}}</span>
     </div>
+  </div>
+
+
+  <div style="display: flex; justify-content: center; position: relative;">
+
+    <div style="border: 10px solid white; padding: 20px; background-color: white; border-radius: 50%; display: inline-block; width: 500px; height: 500px;">
+      <form #g="ngForm" (submit)="central.edit(g, iddi)">
+        <mat-form-field class="example-full-width">
+          <mat-label>Nome</mat-label>
+          <input matInput placeholder="Es. Mario" name="name" [ngModel] required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Nome</mat-label>
+          <input matInput placeholder="Es. Mario" name="name" [ngModel] required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Nome</mat-label>
+          <input matInput placeholder="Es. Mario" name="name" [ngModel] required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Nome</mat-label>
+          <input matInput placeholder="Es. Mario" name="name" [ngModel] required>
+        </mat-form-field>
+
+        <button class="conf" type="submit">
+          Conferma
+        </button>
+      </form>
+    </div>
+    <img id="border-spin" style="position: absolute; top:-90px; width: 600px; z-index: -1;"
+    src="../../../assets/images/border-spin (1).png" alt="">
   </div>
 
 

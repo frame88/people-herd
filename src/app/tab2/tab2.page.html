@@ -8,6 +8,7 @@
 
 <ion-content [fullscreen]="true">
 
+  <img src="../../assets/images/monopeople.svg" class="bg-img" alt="">
   <div *ngIf="central.error" style=" padding:1em ;text-align: center; color: white; background-color: rgb(255, 115, 115);">
     ERROR
     <ion-icon name="close-circle-outline" (click)="central.error = null" style="margin-left: 5px; cursor: pointer;"></ion-icon>
@@ -51,22 +52,21 @@
 
   </div>
 
-  <div style="margin: 2em;">
-    <table>
-      <tr class="labels">
-        <th *ngFor="let i of central.users_labels" style="width: 20vw; text-align: start;">{{i}}</th>
-      </tr>
-      <tr *ngFor="let i of central.users" style="position: relative; cursor: pointer;"
-        [routerLink]="['tabs/tab2/usermod', i.id]">
-        <td>{{i.id}}</td>
-        <td class="txt-capital">{{i.name}}</td>
-        <td class="txt-capital">{{i.surname}}</td>
-        <td class="txt-capital">{{i.username}}</td>
-        <td>{{i.mail}}</td>
-        <td>{{i.group}}</td>
+  <table>
+    <tr class="labels">
+      <th *ngFor="let i of central.users_labels">{{i}}</th>
+    </tr>
+    <tr *ngFor="let i of central.users" style="cursor: pointer;" class="tr-bg">
+      <td [routerLink]="['tabs/tab2/usermod', i.id]">{{i.id}}</td>
+      <td [routerLink]="['tabs/tab2/usermod', i.id]" class="txt-capital">{{i.name}}</td>
+      <td [routerLink]="['tabs/tab2/usermod', i.id]" class="txt-capital">{{i.surname}}</td>
+      <td [routerLink]="['tabs/tab2/usermod', i.id]" class="txt-capital">{{i.username}}</td>
+      <td [routerLink]="['tabs/tab2/usermod', i.id]">{{i.mail}}</td>
+      <td [routerLink]="['tabs/tab2/usermod', i.id]">{{i.group}}</td>
+      <td>
         <ion-icon class="trash" name="trash-outline" (click)="central.deleteUsers(i)"></ion-icon>
-      </tr>
-    </table>
-  </div>
+      </td>
+    </tr>
+  </table>
 
 </ion-content>
