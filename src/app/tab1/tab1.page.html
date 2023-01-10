@@ -51,10 +51,10 @@
   </div>
 
   <table>
-    <tr id="labels">
+    <tr style="border: 3px solid white; width: 68%; border-radius: 25px; padding: 1em;" id="labels">
       <th *ngFor="let i of central.groups_labels" style="width: 20vw; text-align: start;">{{i}}</th>
     </tr>
-    <tr *ngFor="let i of central.groups" style="position: relative;">
+    <tr style="border: 3px solid white; width: 68%; border-radius: 25px;" *ngFor="let i of central.groups" style="position: relative;">
       <td>{{i.id}}</td>
       <td class="txt-capital td-hover" [routerLink]="['tabs/tab1/infogroup', i.id]">Gruppo {{i.name}}</td>
       <!-- <td>{{i.role}}</td> -->

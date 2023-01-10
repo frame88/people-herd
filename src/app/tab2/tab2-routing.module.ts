@@ -6,7 +6,16 @@ const routes: Routes = [
   {
     path: '',
     component: Tab2Page,
+  },
+  {
+    path: 'usermod',
+    loadChildren: () => import('./usermod/usermod.module').then( m => m.UsermodPageModule)
+  },
+  {
+    path: 'tabs/tab2/usermod/:id',
+    loadChildren: () => import('./usermod/usermod.module').then( m => m.UsermodPageModule)
   }
+
 ];
 
 @NgModule({
