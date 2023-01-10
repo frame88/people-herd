@@ -9,8 +9,15 @@
 
 
 <ion-content [fullscreen]="true">
-  <div style="display: flex; flex-wrap: wrap;">
+  
+  <div *ngIf="central.error"
+    style=" padding:1em ;text-align: center; color: white; background-color: rgb(255, 115, 115);">
+    ERROR
+    <ion-icon name="close-circle-outline" (click)="central.error = null"
+      style="margin-left: 5px; cursor: pointer;"></ion-icon>
+  </div>
 
+  <div style="display: flex; flex-wrap: wrap;">
     <ion-button id="new-role-btn" class="ion-margin" style="text-transform: uppercase;">aggiungi un nuovo
       ruolo</ion-button>
     <ion-popover trigger="new-role-btn">

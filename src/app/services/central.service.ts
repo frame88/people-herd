@@ -31,7 +31,9 @@ export class CentralService {
     .subscribe((result: IGroups[]) => {
       console.log('gruppi: ', result);
       this.groups = result;
-    });
+    },
+      err => this.error = err
+    );
   }
 
   getUsers() {
@@ -39,7 +41,9 @@ export class CentralService {
     .subscribe((result: IUsers[]) => {
         console.log('users: ', result);
         this.users = result;
-    });
+    },
+      err => this.error = err
+    );
   }
 
   getRoles() {
@@ -47,7 +51,9 @@ export class CentralService {
     .subscribe((result: IRoles[]) => {
         console.log('ruoli: ', result);
         this.roles = result;
-    });
+    },
+      err => this.error = err
+    );
   }
 
   //_______POST
@@ -56,7 +62,9 @@ export class CentralService {
     .subscribe((result: IUsers) => {
       this.users.push(result);
       form.reset();
-    });
+    },
+    err => this.error = err
+    );
   }
 
   addRole(form: NgForm) {
@@ -64,7 +72,9 @@ export class CentralService {
     .subscribe(result => {
       this.roles.push(result);
       form.reset();
-    });
+    },
+    err => this.error = err
+    );
   }
 
 
@@ -73,7 +83,9 @@ export class CentralService {
     .subscribe(result => {
       this.groups.push(result);
       form.reset();
-    });
+    },
+    err => this.error = err
+    );
   }
 
   //_______DELETE
@@ -82,7 +94,9 @@ export class CentralService {
       .subscribe(() => {
         const index = this.groups.findIndex((d: { id: number; }) => d.id === users.id);
         this.groups.splice(users.id, 1);
-      });
+      },
+      err => this.error = err
+      );
     }
 
     deleteRole(users: IRoles) {
@@ -90,12 +104,13 @@ export class CentralService {
       .subscribe(() => {
         const index = this.roles.findIndex((d: { id: number; }) => d.id === users.id);
         this.roles.splice(index, 1);
-      });
+      },
+      err => this.error = err
+      );
     }
 
     deleteUsers(user: IUsers) {
-      this.http.delete(`${this.url}/usersssss/${user.id}`)
-        .subscribe(() => {
+      this.http.delete(`${this.url}/users/${user.id}`).subscribe(() => {
           const index = this.users.indexOf(user);
           this.users.splice(index, 1);
         },

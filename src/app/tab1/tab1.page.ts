@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 import { CentralService } from '../services/central.service';
@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit {
 
   constructor(
     private http: HttpClient,
@@ -19,6 +19,9 @@ export class Tab1Page {
     this.central.getGroups();
   }
 
+  ngOnInit() {
+    this.central.getGroups();
+  }
 }
 
 
