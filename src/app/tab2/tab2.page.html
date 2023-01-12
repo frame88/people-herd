@@ -23,10 +23,27 @@
         <ng-template>
           <ion-content class="ion-padding">
             <form #f="ngForm" (submit)="central.addUsers(f)" class="example-form">
+              <mat-form-field appearance="fill" style="width: 100%;">
+                <mat-label>Assegna un gruppo all'utente</mat-label>
+                <mat-select name="group">
+                  <mat-option [ngModel] *ngFor="let item of central.groups" [value]="item.value">
+                    {{item.id}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Gruppo</mat-label>
+                <mat-select>
+                  <mat-option type="number" name="group" [ngModel] *ngFor="let item of central.groups" value="group">{{item.id}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+
               <mat-form-field class="example-full-width">
                 <mat-label>Gruppo</mat-label>
-                <input matInput type="number" placeholder="Es. Un numero intero" name="group" [ngModel] required>
+                <input matInput type="number" placeholder="Es. Un numero intero" name="group" [ngModel]>
               </mat-form-field>
+
               <mat-form-field class="example-full-width">
                 <mat-label>Nome</mat-label>
                 <input matInput placeholder="Es. Mario" name="name" [ngModel] required>
@@ -43,7 +60,7 @@
                 <mat-label>Mail</mat-label>
                 <input matInput placeholder="Es. mario.rossi@gmail.com" name="mail" [ngModel]>
               </mat-form-field>
-              <button type="submit" class="purple-btn">
+              <button type="submit" class="purple-btn" style="margin: 0;">
                 Conferma
                 <ion-icon style="font-size: 120%;" name="checkmark-circle-outline"></ion-icon>
               </button>

@@ -11,7 +11,7 @@ import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import { IonCustomScrollbarModule } from 'ion-custom-scrollbar';
-
+import {MatSelectModule} from '@angular/material/select';
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
@@ -19,7 +19,8 @@ import { IonCustomScrollbarModule } from 'ion-custom-scrollbar';
     MatInputModule,
     BrowserAnimationsModule,
     MatIconModule,
-    IonCustomScrollbarModule
+    IonCustomScrollbarModule,
+    MatSelectModule
     ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

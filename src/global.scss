@@ -25,6 +25,7 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 @import "../src/theme/myvariable.scss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;900&display=swap');
 
 #logo {
   position: absolute;
@@ -142,7 +143,7 @@ table {
   margin: 3em;
   border-radius: 15px 65px 15px 15px;
   box-shadow: 5px 10px 15px #00000062;
-  
+
   #header {
     background-color: var(--red_pastel);
     border-radius: 0px 60px 0px 0px;

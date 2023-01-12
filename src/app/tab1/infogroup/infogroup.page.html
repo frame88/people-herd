@@ -15,7 +15,7 @@
 
     <div *ngFor="let i of central.groups" class="ion-margin">
       <!-- <div *ngIf="users.i">Content to render when condition is true.</div> -->
-      <div *ngIf="i.id === this.iddi" class="txt-capital">
+      <div *ngIf="i.id === this.iddi">
         <h1 style="margin-bottom: 0; color: rgb(166, 166, 255);">{{i.name}}</h1>
         <h5>{{i.description}}</h5>
       </div>
@@ -35,9 +35,9 @@
                 <li><span>Ruolo: </span><span>{{item.role}}</span></li>
                 <li><span>id: </span><span>{{item.id}}</span></li>
               </ul>
-              <div *ngFor="let i of central.users" style="display: inline;" class="txt-capital">
+              <div *ngFor="let i of central.users" style="display: inline;">
                 <div *ngIf="i.group === this.iddi" style="display: inline;">
-                  <h2 style="color: gray; display: inline;">{{i.name}} </h2>
+                  <h2 class="txt-capital" style="color: gray; display: inline;">{{i.name}} {{i.surname}}</h2>
                 </div>
               </div>
             </div>

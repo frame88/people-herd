@@ -43,7 +43,7 @@
                 <input matInput placeholder="Es. gruppo del dopolavoro" name="description" [ngModel] >
               </mat-form-field>
 
-              <button class="purple-btn" type="submit">
+              <button class="purple-btn" type="submit" style="margin: 0;">
                 Conferma
                 <ion-icon style="font-size: 120%;" name="checkmark-circle-outline"></ion-icon>
               </button>
@@ -70,7 +70,7 @@
         <td [routerLink]="['tabs/tab1/infogroup', i.id]" class="pdr">{{i.description}}</td>
         <td class="pl-5" [routerLink]="['tabs/tab1/infogroup', i.id]">{{i.role}}</td>
         <td (click)="central.deleteGroups(i)">
-          <ion-icon class="trash" name="trash-outline" [style.display]="i.role < 4 ? 'none' : null"></ion-icon>
+          <ion-icon *ngIf="i.role > 4 || i.role === null ? 'none' : null" class="trash" name="trash-outline" [style.display]=""></ion-icon>
         </td>
       </tr>
     </table>

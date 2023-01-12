@@ -6,14 +6,15 @@ import { Tab2Page } from './tab2.page';
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 import {MatInputModule} from '@angular/material/input';
-
+import {MatSelectModule} from '@angular/material/select';
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
     Tab2PageRoutingModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule
   ],
   declarations: [Tab2Page]
 })
