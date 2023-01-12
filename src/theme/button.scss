@@ -1,0 +1,15 @@
+.purple-btn {
+    background-color: var(--purple);
+    padding: 1em;
+    margin: 1em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    box-shadow: 5px 10px 15px #00000062;
+
+    &:hover {
+        background-color: rgb(141, 141, 218);
+        transform: scale(0.9);
+        transition-duration: 0.2s;
+    }
+}

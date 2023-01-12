@@ -25,118 +25,48 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 @import "../src/theme/myvariable.scss";
+@import "../src/theme/form.scss";
+@import "../src/theme/button.scss";
+@import "../src/theme/table.scss";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;900&display=swap');
-
-#logo {
-  position: absolute;
-  z-index: 1;
-  width: 70px;
-  bottom: 7%;
-  left: 20px;
-}
 
 .pl-5 {
   padding-left: 10px;
 }
 
-//TABELLE
-.tr-bg {
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.479);
-  }
+.w-40 {
+  width: 40%;
 }
 
-table {
-  margin: 3em;
-  background-color: var(--table_color);
-  box-shadow: 5px 10px 15px #00000062;
-
-  .labels {
-    border: 3px solid var(--border_label);
-    margin-bottom: 200px;
-    text-transform: capitalize;
-    color: white;
-
-    th {
-      width: 25%;
-      text-align: start;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      border-left: 3px solid var(--border_label);
-    }
-
-    span {
-      background-color: var(--red_pastel);
-      padding: 5px;
-      padding-right: 17px;
-    }
-  }
-
-  td:first-child {
-    padding-left: 10px;
-  }
-
-  th:last-child {
-    padding-right: 10px;
-  }
-
-  tr {
-    height: 60px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.445);
-    cursor: pointer;
-  }
-
-  .trash {
-    padding: 0.5em;
-    cursor: pointer;
-    color: red;
-    background-color: rgb(255, 255, 255);
-
-    &:hover {
-      color: rgb(255, 255, 255);
-      background-color: red;
-      transition-duration: 0.1s;
-      transform: scale(1.2);
-      font-weight: bold;
-    }
-  }
+.w-60 {
+  width: 60%;
 }
 
-// FORM
-.example-form {
-  min-width: 150px;
-  max-width: 200px;
-  width: 100%;
-}
-
-.example-full-width {
-  width: 100%;
+a {
+  text-decoration: none;
 }
 
 .txt-capital {
   text-transform: capitalize;
 }
 
+.bicolor {
+  height: 100vh;
+  background-color: var(--aqua);
+  background-image: linear-gradient(19deg, rgb(255, 255, 255) 50%, var(--aqua) 50%);
+}
 
-.purple-btn {
-  background-color: var(--purple);
-  padding: 1em;
-  margin: 1em;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  box-shadow: 5px 10px 15px #00000062;
-
-  &:hover {
-    background-color: rgb(141, 141, 218);
-    transform: scale(0.9);
-    transition-duration: 0.2s;
-  }
+#logo {
+  position: absolute;
+  z-index: 1;
+  width: 70px;
+  bottom: 10%;
+  left: 20px;
 }
 
 
-//___CARD & round-form
+
+//___CARD
 #card {
   background-color: white;
   border: 5px solid var(--red_pastel);
@@ -172,10 +102,6 @@ table {
   }
 }
 
-a {
-  text-decoration: none;
-}
-
 ul {
   list-style-type: none;
   padding: 0;
@@ -194,65 +120,9 @@ ul {
   }
 }
 
-//password field
-.example-container mat-form-field+mat-form-field {
-  margin-left: 8px;
-}
-
-.example-right-align {
-  text-align: right;
-}
-
-input.example-right-align::-webkit-outer-spin-button,
-input.example-right-align::-webkit-inner-spin-button {
-  display: none;
-}
 
 .pass {
   margin: 5px;
-}
-
-.w-40 {
-  width: 40%;
-}
-
-.w-60 {
-  width: 60%;
-}
-
-#border-spin {
-  animation: rotate linear 15s infinite;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(359deg);
-  }
-}
-
-#circle-form {
-  width: 500px;
-  height: 500px;
-  background-color: rgba(255, 255, 255, 0.637);
-  border: 10px solid var(--red_pastel);
-  border-radius: 50%;
-  display: inline-block;
-  z-index: 2;
-  box-shadow: 5px 10px 15px #00000062;
-}
-
-.bicolor {
-  height: 100vh;
-  background-color: var(--aqua);
-  background-image: linear-gradient(19deg, rgb(255, 255, 255) 50%, var(--aqua) 50%);
-}
-
-th {
-  position: relative;
 }
 
 .sticker {
@@ -272,10 +142,5 @@ th {
   }
 }
 
-th:first-child {
-  .sticker {
-    display: block;
-  }
-}
 
 
