@@ -16,7 +16,7 @@
     <div *ngFor="let i of central.groups" class="ion-margin">
       <!-- <div *ngIf="users.i">Content to render when condition is true.</div> -->
       <div *ngIf="i.id === this.iddi">
-        <h1 style="margin-bottom: 0; color: rgb(166, 166, 255);">{{i.name}}</h1>
+        <h1 style="margin-bottom: 0; color: rgb(166, 166, 255);" class="txt-capital">{{i.name}}</h1>
         <h5>{{i.description}}</h5>
       </div>
     </div>
@@ -35,9 +35,14 @@
                 <li><span>Ruolo: </span><span>{{item.role}}</span></li>
                 <li><span>id: </span><span>{{item.id}}</span></li>
               </ul>
+              <span>partecipanti:</span>
               <div *ngFor="let i of central.users" style="display: inline;">
                 <div *ngIf="i.group === this.iddi" style="display: inline;">
-                  <h2 class="txt-capital" style="color: gray; display: inline;">{{i.name}} {{i.surname}} - </h2>
+                  <ul>                
+                    <li>
+                      <h2 class="txt-capital" style="color: gray; display: inline;">{{i.name}} {{i.surname}}</h2>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -61,7 +66,7 @@
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                   <mat-label>Ruolo</mat-label>
-                  <mat-select [ngModel]>
+                  <mat-select name="role" [ngModel]>
                     <mat-option *ngFor="let role of central.roles" value="{{role.id}}">
                       {{role.title}}
                     </mat-option>

@@ -29,12 +29,12 @@
           <ion-content class="ion-padding">
             <form #f="ngForm" (submit)="central.addGroup(f)" class="example-form">
               <mat-form-field class="example-full-width">
-                <mat-label>Nome</mat-label>
+                <mat-label>Nome gruppo</mat-label>
                 <input matInput placeholder="Es. Mario" name="name" [ngModel] required>
               </mat-form-field>
 
               <mat-form-field appearance="fill">
-                <mat-label>Ruolo</mat-label>
+                <mat-label>Ruolo gruppo</mat-label>
                 <mat-select name="role" [ngModel] required>
                   <mat-option *ngFor="let role of central.roles" value="{{role.id}}" class="txt-capital">{{role.title}}</mat-option>
                 </mat-select>
