@@ -17,6 +17,8 @@ export class Tab1Page implements OnInit {
     private activatedRoute: ActivatedRoute
     ) {
     this.central.getGroups();
+    this.central.getRoles();
+    this.central.getUsers();
   }
 
   ngOnInit() {
