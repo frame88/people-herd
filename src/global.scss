@@ -24,47 +24,21 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+@import "../src/theme/myvariable.scss";
 
-/*
-TABELLE
-*/
-
-/*
-
-table {
-  width: 100vw;
+#logo {
+  position: absolute;
+  z-index: 1;
+  width: 70px;
+  bottom: 7%;
+  left: 20px;
 }
 
-tr {
-  display: inline;
-  border-bottom: 1px solid white;
-}
-
-th {
-  width: 20%;
-  text-transform: uppercase;
-  color: rgb(255, 122, 122);
-  // background-color: #FFE53B;
-  // background-image: linear-gradient(253deg, #FFE53B 0%, #FF2525 74%);
-}
-
-td {
-  width: 20vw;
-  height: 50px;
+.pl-5 {
   padding-left: 10px;
 }
 
-.td-hover {
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.315);
-    cursor: pointer;
-  }
-}
-*/
-
-
 //TABELLE
-
 .tr-bg {
 
   &:hover {
@@ -74,27 +48,41 @@ td {
 
 table {
   margin: 3em;
+  background-color: var(--table_color);
+  box-shadow: 5px 10px 15px #00000062;
 
   .labels {
-    border: 3px solid white;
+    border: 3px solid var(--border_label);
     margin-bottom: 200px;
-    color: rgb(255, 156, 156);
     text-transform: capitalize;
+    color: white;
 
     th {
       width: 25%;
       text-align: start;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-left: 3px solid var(--border_label);
+    }
+
+    span {
+      background-color: var(--red_pastel);
+      padding: 5px;
+      padding-right: 17px;
     }
   }
 
-  th:first-child,
   td:first-child {
     padding-left: 10px;
   }
 
+  th:last-child {
+    padding-right: 10px;
+  }
+
   tr {
     height: 60px;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.445);
     cursor: pointer;
   }
 
@@ -103,7 +91,6 @@ table {
     cursor: pointer;
     color: red;
     background-color: rgb(255, 255, 255);
-    margin-right: -25px;
 
     &:hover {
       color: rgb(255, 255, 255);
@@ -131,11 +118,14 @@ table {
 }
 
 
-.purple-btn, .conf {
-  background-color: rgb(166, 166, 255);
+.purple-btn {
+  background-color: var(--purple);
   padding: 1em;
   margin: 1em;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  box-shadow: 5px 10px 15px #00000062;
 
   &:hover {
     background-color: rgb(141, 141, 218);
@@ -144,7 +134,144 @@ table {
   }
 }
 
-.conf {
-  border-radius: 15px;
+
+//___CARD & round-form
+#card {
+  background-color: white;
+  border: 5px solid var(--red_pastel);
+  margin: 3em;
+  border-radius: 15px 65px 15px 15px;
+
+  #header {
+    background-color: var(--red_pastel);
+    border-radius: 0px 60px 0px 0px;
+    padding: 1em;
+    color: white;
+
+    h1,
+    h3 {
+      margin: 0;
+      padding: 0;
+      letter-spacing: 1px;
+      text-transform: capitalize;
+    }
+  }
+
+  #content {
+    color: gray;
+    padding: 2em 1em;
+
+    ul {
+      li {
+        margin-bottom: 0.9em;
+        border-bottom: 1px solid rgb(212, 212, 212);
+      }
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
   margin: 0;
+
+  span {
+    display: inline;
+    font-size: 120%;
+  }
+
+  li {
+    span:first-child {
+      color: rgb(185, 185, 185);
+      font-size: 100%;
+    }
+  }
+}
+
+//password field
+.example-container mat-form-field+mat-form-field {
+  margin-left: 8px;
+}
+
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+.pass {
+  margin: 5px;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+#border-spin {
+  animation: rotate linear 15s infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+#circle-form {
+  width: 500px;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 0.637);
+  border: 10px solid var(--red_pastel);
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 2;
+  box-shadow: 5px 10px 15px #00000062;
+}
+
+.bicolor {
+  height: 100vh;
+  background-color: var(--aqua);
+  background-image: linear-gradient(19deg, rgb(255, 255, 255) 50%, var(--aqua) 50%);
+}
+
+th {
+  position: relative;
+}
+
+.sticker {
+  display: none;
+  width: 85px;
+  height: 25px;
+  background-color: var(--border_label);
+  border-radius: 10px 10px 0px 0px;
+  position: absolute;
+  left: 15px;
+  top: -28px;
+  text-align: center;
+
+  ion-icon {
+    font-size: 150%;
+    color: var(--table_color);
+  }
+}
+
+th:first-child {
+  .sticker {
+    display: block;
+  }
 }

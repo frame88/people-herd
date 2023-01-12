@@ -129,6 +129,15 @@ export class CentralService {
         this.getUsers();
     });
   }
-
-
+    editGroup(form: NgForm, id: number) {
+      console.log('edit form', form);
+      console.log('edit id', id);
+      console.log(form.value)
+      this.http.patch<IGroups>(`${this.url}/groups/${id}`, form.value)
+        .subscribe(res => {
+        const index = this.groups.findIndex((d: { id: any; }) => d.id === this.groups.id)
+        this.groups[index] = res;
+        this.getGroups();
+    });
   }
+}

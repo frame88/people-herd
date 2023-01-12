@@ -12,7 +12,8 @@ import { ActivatedRoute } from '@angular/router';
 export class UsermodPage implements OnInit {
 
   iddi = +this.activatedRoute.snapshot.params['id'];
-
+  hide = true;
+  
   constructor(
     public central: CentralService,
     private http: HttpClient,

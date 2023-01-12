@@ -5,25 +5,84 @@
 </ion-header>
 
 <ion-content>
-
-  <div>
-    <button class="txt-capital purple-btn" routerLink="/tabs/tab1">
-      indietro
-    </button>
-  </div>
-
-  <div *ngFor="let i of central.groups" class="ion-margin">
-    <!-- <div *ngIf="users.i">Content to render when condition is true.</div> -->
-    <div *ngIf="i.id === this.iddi" class="txt-capital">
-      <h1 style="margin-bottom: 0; color: rgb(166, 166, 255);">{{i.name}}</h1>
-      <h5 style="color: rgb(204, 204, 204);">{{i.description}}</h5>
+  <div class="bicolor" style="overflow-y: hidden;">
+    <div>
+      <button class="txt-capital purple-btn" routerLink="/tabs/tab1">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+        indietro
+      </button>
     </div>
-  </div>
 
-  <div *ngFor="let i of central.users" style="margin-left: 3em;" class="txt-capital">
-    <div *ngIf="i.group === this.iddi">
-      <h2>{{i.name}}</h2>
+    <div *ngFor="let i of central.groups" class="ion-margin">
+      <!-- <div *ngIf="users.i">Content to render when condition is true.</div> -->
+      <div *ngIf="i.id === this.iddi" class="txt-capital">
+        <h1 style="margin-bottom: 0; color: rgb(166, 166, 255);">{{i.name}}</h1>
+        <h5>{{i.description}}</h5>
+      </div>
     </div>
-  </div>
 
+
+    <div style="display: flex; justify-content: center;">
+      <div class="w-60 left" style="margin: 0;">
+        <div id="card">
+          <div *ngFor="let item of central.groups">
+            <div id="header" *ngIf="item.id === this.iddi" style="position: relative;">
+              <h1>{{item.name}}</h1>
+              <h4 style="color: rgba(255, 255, 255, 0.897);">{{item.description}}</h4>
+            </div>
+            <div id="content" *ngIf="item.id === this.iddi">
+              <ul>
+                <li><span>Ruolo: </span><span>{{item.role}}</span></li>
+                <li><span>id: </span><span>{{item.id}}</span></li>
+              </ul>
+              <div *ngFor="let i of central.users" style="display: inline;" class="txt-capital">
+                <div *ngIf="i.group === this.iddi" style="display: inline;">
+                  <h2 style="color: gray; display: inline;">{{i.name}} </h2>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="w-40 right" style="margin: 0; margin-left: 4em;">
+        <div style="display: flex;">
+          <div style="display: flex; justify-content: center; position: relative; padding: 3em;">
+            <div id="circle-form">
+              <form #g="ngForm" (submit)="central.editGroup(g, iddi)">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Nome</mat-label>
+                  <input matInput placeholder="Es. Admin" name="name" [ngModel]>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Descrizione</mat-label>
+                  <textarea matInput placeholder="Es. Gruppo sportivo per..." name="description" [ngModel]></textarea>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <mat-label>Ruolo</mat-label>
+                  <mat-select>
+                    <mat-option *ngFor="let i of central.groups" [value]="i.groups" [ngModel]>
+                      {{i.id}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <ion-row style="display: flex; justify-content: end;">
+                  <button class="purple-btn" type="submit" style="background-color: rgb(255, 65, 65);">
+                    <span>Conferma</span>
+                    <ion-icon style="font-size: 120%;" name="checkmark-circle-outline"></ion-icon>
+                  </button>
+                </ion-row>
+
+              </form>
+            </div>
+            <img id="border-spin" style="position: absolute; top: -40px; width: 800px; z-index: 1;"
+              src="../../../assets/images/border-spin (1).png" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
 </ion-content>

@@ -1,20 +1,6 @@
 {
   "users": [
     {
-      "id": 0,
-      "name": "Luca",
-      "surname": "Cincischia",
-      "username": "cincio",
-      "password": "sgaramush856",
-      "group": 4,
-      "mail": "cinciulla@gmail.com",
-      "phone": "3265656565",
-      "birthDate": "08/08/1997",
-      "birthPlace": "Trieste",
-      "address": "Via metatarso, 3",
-      "taxId": "LZZFNC97M08H501I"
-    },
-    {
       "id": 1,
       "name": "Peter",
       "surname": "Dirty",
@@ -69,6 +55,20 @@
       "birthPlace": "Milano",
       "address": "Via Roma, 16",
       "taxId": "CSSARI22M16H501I"
+    },
+    {
+      "id": 5,
+      "name": "Luca",
+      "surname": "Cincischia",
+      "username": "cincio",
+      "password": "sgaramush856",
+      "group": 4,
+      "mail": "cinciulla@gmail.com",
+      "phone": "3265656565",
+      "birthDate": "08/08/1997",
+      "birthPlace": "Trieste",
+      "address": "Via metatarso, 3",
+      "taxId": "LZZFNC97M08H501I"
     }
   ]
 }

@@ -7,66 +7,77 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <div class="bicolor">
+    <img src="../../assets/images/monopeople.svg" class="bg-img" alt="">
+    <div *ngIf="central.error" style=" padding:1em ;text-align: center; color: white; background-color: rgb(255, 115, 115);">
+      ERROR
+      <ion-icon name="close-circle-outline" (click)="central.error = null" style="margin-left: 5px; cursor: pointer;"></ion-icon>
+    </div>
 
-  <img src="../../assets/images/monopeople.svg" class="bg-img" alt="">
-  <div *ngIf="central.error" style=" padding:1em ;text-align: center; color: white; background-color: rgb(255, 115, 115);">
-    ERROR
-    <ion-icon name="close-circle-outline" (click)="central.error = null" style="margin-left: 5px; cursor: pointer;"></ion-icon>
+    <div style="display: flex; flex-wrap: wrap;">
+
+      <button id="trigger-button" class="purple-btn ion-margin">
+        <ion-icon name="add-outline"></ion-icon>
+        aggiungi un nuovo membro</button>
+      <ion-popover trigger="trigger-button">
+        <ng-template>
+          <ion-content class="ion-padding">
+            <form #f="ngForm" (submit)="central.addUsers(f)" class="example-form">
+              <mat-form-field class="example-full-width">
+                <mat-label>Gruppo</mat-label>
+                <input matInput type="number" placeholder="Es. Un numero intero" name="group" [ngModel] required>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Nome</mat-label>
+                <input matInput placeholder="Es. Mario" name="name" [ngModel] required>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Cognome</mat-label>
+                <input matInput placeholder="Es. Rossi" name="surname" [ngModel]>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Nickname</mat-label>
+                <input matInput placeholder="Es. Pippo" name="username" [ngModel]>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Mail</mat-label>
+                <input matInput placeholder="Es. mario.rossi@gmail.com" name="mail" [ngModel]>
+              </mat-form-field>
+              <button type="submit" class="purple-btn">
+                Conferma
+                <ion-icon style="font-size: 120%;" name="checkmark-circle-outline"></ion-icon>
+              </button>
+            </form>
+
+          </ion-content>
+        </ng-template>
+      </ion-popover>
+
+    </div>
+
+    <table>
+      <tr class="labels">
+        <th *ngFor="let i of central.users_labels">
+          <div class="sticker">
+            <ion-icon name="folder-open-outline"></ion-icon>
+          </div>
+          <span>{{i}}</span>
+        </th>
+      </tr>
+      <tr *ngFor="let i of central.users" style="cursor: pointer;" class="tr-bg">
+        <td [routerLink]="['tabs/tab2/usermod', i.id]">{{i.id}}</td>
+        <td [routerLink]="['tabs/tab2/usermod', i.id]" class="txt-capital">{{i.name}}</td>
+        <td [routerLink]="['tabs/tab2/usermod', i.id]" class="txt-capital">{{i.surname}}</td>
+        <td [routerLink]="['tabs/tab2/usermod', i.id]" class="txt-capital">{{i.username}}</td>
+        <td [routerLink]="['tabs/tab2/usermod', i.id]">{{i.mail}}</td>
+        <td class="pl-5" [routerLink]="['tabs/tab2/usermod', i.id]">{{i.group}}</td>
+        <td>
+          <ion-icon class="trash" name="trash-outline" (click)="central.deleteUsers(i)"></ion-icon>
+        </td>
+      </tr>
+    </table>
+
+
   </div>
-
-  <div style="display: flex; flex-wrap: wrap;">
-
-    <button id="trigger-button" class="purple-btn ion-margin">aggiungi un nuovo membro</button>
-    <ion-popover trigger="trigger-button">
-      <ng-template>
-        <ion-content class="ion-padding">
-          <form #f="ngForm" (submit)="central.addUsers(f)" class="example-form">
-            <mat-form-field class="example-full-width">
-              <mat-label>Gruppo</mat-label>
-              <input matInput type="number" placeholder="Es. Un numero intero" name="group" [ngModel] required>
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-              <mat-label>Nome</mat-label>
-              <input matInput placeholder="Es. Mario" name="name" [ngModel] required>
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-              <mat-label>Cognome</mat-label>
-              <input matInput placeholder="Es. Rossi" name="surname" [ngModel]>
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-              <mat-label>Nickname</mat-label>
-              <input matInput placeholder="Es. Pippo" name="username" [ngModel]>
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-              <mat-label>Mail</mat-label>
-              <input matInput placeholder="Es. mario.rossi@gmail.com" name="mail" [ngModel]>
-            </mat-form-field>
-            <button type="submit" class="conf">
-              Conferma
-            </button>
-          </form>
-
-        </ion-content>
-      </ng-template>
-    </ion-popover>
-
-  </div>
-
-  <table>
-    <tr class="labels">
-      <th *ngFor="let i of central.users_labels">{{i}}</th>
-    </tr>
-    <tr *ngFor="let i of central.users" style="cursor: pointer;" class="tr-bg">
-      <td [routerLink]="['tabs/tab2/usermod', i.id]">{{i.id}}</td>
-      <td [routerLink]="['tabs/tab2/usermod', i.id]" class="txt-capital">{{i.name}}</td>
-      <td [routerLink]="['tabs/tab2/usermod', i.id]" class="txt-capital">{{i.surname}}</td>
-      <td [routerLink]="['tabs/tab2/usermod', i.id]" class="txt-capital">{{i.username}}</td>
-      <td [routerLink]="['tabs/tab2/usermod', i.id]">{{i.mail}}</td>
-      <td [routerLink]="['tabs/tab2/usermod', i.id]">{{i.group}}</td>
-      <td>
-        <ion-icon class="trash" name="trash-outline" (click)="central.deleteUsers(i)"></ion-icon>
-      </td>
-    </tr>
-  </table>
 
 </ion-content>

@@ -9,56 +9,65 @@
 
 
 <ion-content [fullscreen]="true">
+  <div class="bicolor">
+    <img src="../../assets/images/shield.svg" class="bg-img" alt="">
 
-  <img src="../../assets/images/shield.svg" class="bg-img" alt="">
+    <div *ngIf="central.error"
+      style=" padding:1em ;text-align: center; color: white; background-color: rgb(255, 115, 115);">
+      ERROR
+      <ion-icon name="close-circle-outline" (click)="central.error = null"
+        style="margin-left: 5px; cursor: pointer;"></ion-icon>
+    </div>
 
-  <div *ngIf="central.error"
-    style=" padding:1em ;text-align: center; color: white; background-color: rgb(255, 115, 115);">
-    ERROR
-    <ion-icon name="close-circle-outline" (click)="central.error = null"
-      style="margin-left: 5px; cursor: pointer;"></ion-icon>
+    <div style="display: flex; flex-wrap: wrap;">
+      <button id="new-role-btn" class="ion-margin purple-btn" style="text-transform: uppercase;">
+        <ion-icon name="add-outline"></ion-icon>
+        aggiungi un nuovo ruolo
+      </button>
+      <ion-popover trigger="new-role-btn">
+        <ng-template>
+          <ion-content class="ion-padding">
+            <form #g="ngForm" (submit)="central.addRole(g)" class="example-form">
+              <mat-form-field class="example-full-width">
+                <mat-label>Nome</mat-label>
+                <input matInput placeholder="Es. Mario" name="title" [ngModel] required>
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <mat-label>Descrizione</mat-label>
+                <input matInput placeholder="Es. Ruolo di amministratore" name="description" [ngModel]>
+              </mat-form-field>
+
+              <button class="purple-btn" type="submit">
+                Conferma
+                <ion-icon style="font-size: 120%;" name="checkmark-circle-outline"></ion-icon>
+              </button>
+            </form>
+
+          </ion-content>
+        </ng-template>
+      </ion-popover>
+
+    </div>
+
+    <table>
+      <tr class="labels">
+        <th *ngFor="let i of central.roles_labels">
+          <span>{{i}}</span>
+          <div class="sticker">
+            <ion-icon name="folder-open-outline"></ion-icon>
+          </div>
+        </th>
+      </tr>
+      <tr *ngFor="let i of central.roles" class="tr-bg">
+        <td>{{i.id}}</td>
+        <td>{{i.title}}</td>
+        <td>{{i.description}}</td>
+        <td class="pl-5">{{i.default}}</td>
+        <td>
+          <ion-icon class="trash" name="trash-outline" (click)="central.deleteRole(i)" [style.display]="i.id < 3 ? 'none' : 'visible'"></ion-icon>
+        </td>
+      </tr>
+    </table>
   </div>
-
-  <div style="display: flex; flex-wrap: wrap;">
-    <button id="new-role-btn" class="ion-margin purple-btn" style="text-transform: uppercase;">aggiungi un nuovo
-      ruolo</button>
-    <ion-popover trigger="new-role-btn">
-      <ng-template>
-        <ion-content class="ion-padding">
-          <form #g="ngForm" (submit)="central.addRole(g)" class="example-form">
-            <mat-form-field class="example-full-width">
-              <mat-label>Nome</mat-label>
-              <input matInput placeholder="Es. Mario" name="title" [ngModel] required>
-            </mat-form-field>
-
-            <mat-form-field class="example-full-width">
-              <mat-label>Descrizione</mat-label>
-              <input matInput placeholder="Es. Ruolo di amministratore" name="description" [ngModel]>
-            </mat-form-field>
-
-            <button class="conf" type="submit">
-              Conferma
-            </button>
-          </form>
-
-        </ion-content>
-      </ng-template>
-    </ion-popover>
-
-  </div>
-
-  <table>
-    <tr class="labels">
-      <th *ngFor="let i of central.roles_labels">{{i}}</th>
-    </tr>
-    <tr *ngFor="let i of central.roles" class="tr-bg">
-      <td>{{i.id}}</td>
-      <td>{{i.title}}</td>
-      <td>{{i.description}}</td>
-      <td>{{i.default}}</td>
-      <td>
-        <ion-icon class="trash" name="trash-outline" (click)="central.deleteRole(i)" [style.display]="i.id < 3 ? 'none' : 'visible'"></ion-icon>
-      </td>
-    </tr>
-  </table>
 </ion-content>

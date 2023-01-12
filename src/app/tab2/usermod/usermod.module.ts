@@ -8,6 +8,8 @@ import { UsermodPageRoutingModule } from './usermod-routing.module';
 
 import { UsermodPage } from './usermod.page';
 import { MatInputModule } from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+
 
 @NgModule({
   imports: [
@@ -15,8 +17,8 @@ import { MatInputModule } from '@angular/material/input';
     FormsModule,
     IonicModule,
     UsermodPageRoutingModule,
-    MatInputModule
-
+    MatInputModule,
+    MatIconModule
   ],
   declarations: [UsermodPage]
 })

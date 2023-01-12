@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class InfogroupPage implements OnInit {
 
   iddi = +this.activatedRoute.snapshot.params['id'];
+  hide = true;
 
   constructor(
     private http: HttpClient,

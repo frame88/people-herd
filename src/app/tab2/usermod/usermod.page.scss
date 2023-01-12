@@ -1,17 +1,11 @@
 span {
-  display: block;
+  padding: 0.3em;
 }
 
-#border-spin {
-  animation: rotate linear 5s infinite;
+#icon-mod {
+  position: absolute;
+  right: 10px;
+  width: 150px;
+  transform: translateY(-100px);
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(359deg);
-  }
-}

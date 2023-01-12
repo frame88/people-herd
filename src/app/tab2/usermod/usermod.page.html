@@ -6,84 +6,94 @@
 
 <ion-content>
 
-  <div>
-    <button class="txt-capital purple-btn" routerLink="/tabs/tab1">
-      indietro
-    </button>
-    <button id="new-role-btn"
-      class="ion-margin purple-btn"
-      style="text-transform: uppercase;">
-      aggiorna utente
-    </button>
-  </div>
-
-  <div style="display: flex; flex-wrap: wrap;">
-    <ion-popover trigger="new-role-btn">
-      <ng-template>
-        <ion-content class="ion-padding">
-          <form #g="ngForm" (submit)="central.edit(g, iddi)" class="example-form">
-            <mat-form-field class="example-full-width">
-              <mat-label>Nome</mat-label>
-              <input matInput placeholder="Es. Mario" name="name" [ngModel] required>
-            </mat-form-field>
-
-            <button class="conf" type="submit">
-              Conferma
-            </button>
-          </form>
-
-        </ion-content>
-      </ng-template>
-    </ion-popover>
-  </div>
-
-
-  <div *ngFor="let item of central.users" class="ion-margin">
-    <div *ngIf="item.id === this.iddi" class="ion-margin txt-capital">
-      <h1>{{item.name}}</h1>
-      <span>{{item.surname}}</span>
-      <span>id: {{item.id}}</span>
-      <span>password: {{item.password}}</span>
-      <span>gruppo: {{item.group}}</span>
-      <span>mail: {{item.mail}}</span>
-      <span>telefono: {{item.phone}}</span>
-      <span>compleanno: {{item.birthDate}}</span>
-      <span>luogo di nascita: {{item.birthPlace}}</span>
-      <span>indirizzo: {{item.address}}</span>
-      <span>cod. fiscale: {{item.taxId}}</span>
+  <div class="bicolor" style="overflow-y: hidden;">
+    <div>
+      <button class="txt-capital purple-btn" routerLink="/tabs/tab1">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+        indietro
+      </button>
     </div>
-  </div>
 
+    <div style="display: flex; justify-content: center;">
+      <div class="w-60 left" style="margin: 0;">
+        <div id="card">
+          <div *ngFor="let item of central.users">
+            <div id="header" *ngIf="item.id === this.iddi" style="position: relative;">
+              <h1>{{item.name}}</h1>
+              <h3>{{item.surname}}</h3>
+              <img id="icon-mod" src="../../../assets/images/user-mod.svg" alt="icon mod user">
+            </div>
+            <div id="content" *ngIf="item.id === this.iddi">
+              <ul>
+                <li><span>username: </span><span>{{item.username}}</span></li>
+                <li><span>id: </span><span>{{item.id}}</span></li>
+                <li><span>password: </span><span>{{item.password}}</span></li>
+                <li><span>gruppo: </span><span>{{item.group}}</span></li>
+                <li><span>mail: </span><span>{{item.mail}}</span></li>
+                <li><span>telefono: </span><span>{{item.phone}}</span></li>
+                <li><span>compleanno: </span><span>{{item.birthDate}}</span></li>
+                <li><span>luogo di nascita: </span><span>{{item.birthPlace}}</span></li>
+                <li><span>indirizzo: </span><span>{{item.address}}</span></li>
+                <li><span>cod. fiscale: </span><span>{{item.taxId}}</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <div style="display: flex; justify-content: center; position: relative;">
+      <div class="w-40 right" style="margin: 0; margin-left: 4em;">
+        <div style="display: flex;">
+          <div style="display: flex; justify-content: center; position: relative; padding: 3em;">
+            <div id="circle-form">
 
-    <div style="border: 10px solid white; padding: 20px; background-color: white; border-radius: 50%; display: inline-block; width: 500px; height: 500px;">
-      <form #g="ngForm" (submit)="central.edit(g, iddi)">
-        <mat-form-field class="example-full-width">
-          <mat-label>Nome</mat-label>
-          <input matInput placeholder="Es. Mario" name="name" [ngModel] required>
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <mat-label>Nome</mat-label>
-          <input matInput placeholder="Es. Mario" name="name" [ngModel] required>
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <mat-label>Nome</mat-label>
-          <input matInput placeholder="Es. Mario" name="name" [ngModel] required>
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <mat-label>Nome</mat-label>
-          <input matInput placeholder="Es. Mario" name="name" [ngModel] required>
-        </mat-form-field>
+              <form #g="ngForm" (submit)="central.edit(g, iddi)">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Nome</mat-label>
+                  <input matInput placeholder="Es. Mario" name="name" [ngModel]>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Cognome</mat-label>
+                  <input matInput placeholder="Es. Bianchi" name="surname" [ngModel]>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Mail</mat-label>
+                  <input matInput placeholder="Es. mario.bianchi@example.com" name="mail" [ngModel]>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Username</mat-label>
+                  <input matInput placeholder="Es. mario.bianchi@example.com" name="username" [ngModel]>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="pass">
+                  <mat-label>Inserisci una password</mat-label>
+                  <input matInput [type]="hide ? 'password' : 'text'">
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="pass">
+                  <mat-label>Conferma la password</mat-label>
+                  <input matInput [type]="hide ? 'password' : 'text'">
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </mat-form-field>
+                <ion-row style="display: flex; justify-content: end;">
+                  <button class="purple-btn" type="submit" style="background-color: rgb(255, 65, 65);">
+                    <span>Conferma</span>
+                    <ion-icon style="font-size: 120%;" name="checkmark-circle-outline"></ion-icon>
+                  </button>
+                </ion-row>
+              </form>
+            </div>
+            <img id="border-spin" style="position: absolute; top:-40px; width: 800px; z-index: 1;"
+            src="../../../assets/images/border-spin (1).png" alt="">
+          </div>
+        </div>
 
-        <button class="conf" type="submit">
-          Conferma
-        </button>
-      </form>
+      </div>
     </div>
-    <img id="border-spin" style="position: absolute; top:-90px; width: 600px; z-index: -1;"
-    src="../../../assets/images/border-spin (1).png" alt="">
+
   </div>
-
-
 </ion-content>
