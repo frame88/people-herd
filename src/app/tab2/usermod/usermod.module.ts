@@ -9,6 +9,8 @@ import { UsermodPageRoutingModule } from './usermod-routing.module';
 import { UsermodPage } from './usermod.page';
 import { MatInputModule } from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
+import { IonCustomScrollbarModule } from 'ion-custom-scrollbar';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import {MatIconModule} from '@angular/material/icon';
     IonicModule,
     UsermodPageRoutingModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    IonCustomScrollbarModule,
+    MatSelectModule
   ],
   declarations: [UsermodPage]
 })

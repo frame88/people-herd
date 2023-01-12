@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content scrollbar>
 
   <div class="bicolor" style="overflow-y: hidden;">
     <div>
@@ -27,12 +27,12 @@
               <ul>
                 <li><span>username: </span><span>{{item.username}}</span></li>
                 <li><span>id: </span><span>{{item.id}}</span></li>
-                <li><span>password: </span><span>{{item.password}}</span></li>
                 <li><span>gruppo: </span><span>{{item.group}}</span></li>
                 <li><span>mail: </span><span>{{item.mail}}</span></li>
                 <li><span>telefono: </span><span>{{item.phone}}</span></li>
                 <li><span>compleanno: </span><span>{{item.birthDate}}</span></li>
                 <li><span>luogo di nascita: </span><span>{{item.birthPlace}}</span></li>
+                <li><span>password: </span><span>{{item.password}}</span></li>
                 <li><span>indirizzo: </span><span>{{item.address}}</span></li>
                 <li><span>cod. fiscale: </span><span>{{item.taxId}}</span></li>
               </ul>
@@ -56,12 +56,20 @@
                   <input matInput placeholder="Es. Bianchi" name="surname" [ngModel]>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
+                  <mat-label>Username</mat-label>
+                  <input matInput placeholder="Es. mario.bianchi@example.com" name="username" [ngModel]>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
                   <mat-label>Mail</mat-label>
                   <input matInput placeholder="Es. mario.bianchi@example.com" name="mail" [ngModel]>
                 </mat-form-field>
-                <mat-form-field class="example-full-width">
-                  <mat-label>Username</mat-label>
-                  <input matInput placeholder="Es. mario.bianchi@example.com" name="username" [ngModel]>
+                <mat-form-field appearance="fill" style="width: 100%;">
+                  <mat-label>Assegna un gruppo all'utente</mat-label>
+                  <mat-select>
+                    <mat-option *ngFor="let item of central.groups" [value]="item.value">
+                      {{item.id}}
+                    </mat-option>
+                  </mat-select>
                 </mat-form-field>
                 <mat-form-field appearance="fill" class="pass">
                   <mat-label>Inserisci una password</mat-label>

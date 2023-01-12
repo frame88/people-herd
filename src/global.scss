@@ -141,7 +141,8 @@ table {
   border: 5px solid var(--red_pastel);
   margin: 3em;
   border-radius: 15px 65px 15px 15px;
-
+  box-shadow: 5px 10px 15px #00000062;
+  
   #header {
     background-color: var(--red_pastel);
     border-radius: 0px 60px 0px 0px;
@@ -275,3 +276,5 @@ th:first-child {
     display: block;
   }
 }
+
+
