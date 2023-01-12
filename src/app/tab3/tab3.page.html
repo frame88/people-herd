@@ -29,13 +29,13 @@
           <ion-content class="ion-padding">
             <form #g="ngForm" (submit)="central.addRole(g)" class="example-form">
               <mat-form-field class="example-full-width">
-                <mat-label>Nome</mat-label>
-                <input matInput placeholder="Es. Mario" name="title" [ngModel] required>
+                <mat-label>Nome ruolo</mat-label>
+                <input matInput placeholder="Es. Dipendenti" name="title" [ngModel] required>
               </mat-form-field>
 
               <mat-form-field class="example-full-width">
                 <mat-label>Descrizione</mat-label>
-                <input matInput placeholder="Es. Ruolo di amministratore" name="description" [ngModel]>
+                <input matInput placeholder="Es. Ruolo di dipendenti" name="description" [ngModel]>
               </mat-form-field>
 
               <button class="purple-btn" type="submit" style="margin: 0;">
@@ -65,7 +65,7 @@
         <td>{{i.description}}</td>
         <td class="pl-5">{{i.default}}</td>
         <td>
-          <ion-icon class="trash" name="trash-outline" (click)="central.deleteRole(i)" [style.display]="i.id < 3 ? 'none' : 'visible'"></ion-icon>
+          <ion-icon class="trash" name="trash-outline" (click)="central.deleteRole(i)" [style.display]="i.id < 4 ? 'none' : 'visible'"></ion-icon>
         </td>
       </tr>
     </table>

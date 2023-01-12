@@ -57,7 +57,7 @@
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
                   <mat-label>Username</mat-label>
-                  <input matInput placeholder="Es. mario.bianchi@example.com" name="username" [ngModel]>
+                  <input matInput placeholder="Es. mariopallido" name="username" [ngModel]>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
                   <mat-label>Mail</mat-label>
@@ -66,7 +66,7 @@
                 <mat-form-field appearance="fill" style="width: 100%;">
                   <mat-label>Assegna un gruppo all'utente</mat-label>
                   <mat-select [ngModel] required>
-                    <mat-option *ngFor="let group of central.groups" value="{{group.role}}">
+                    <mat-option *ngFor="let group of central.groups" type="number" value="group.role">
                       {{group.name}}
                     </mat-option>
                   </mat-select>

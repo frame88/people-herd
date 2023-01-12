@@ -25,22 +25,24 @@
     <div style="display: flex; justify-content: center;">
       <div class="w-60 left" style="margin: 0;">
         <div id="card">
-          <div *ngFor="let item of central.groups">
-            <div id="header" *ngIf="item.id === this.iddi" style="position: relative;">
-              <h1>{{item.name}}</h1>
-              <h4 style="color: rgba(255, 255, 255, 0.897);">{{item.description}}</h4>
+          <div *ngFor="let group of central.groups">
+            <div id="header" *ngIf="group.id === this.iddi" style="position: relative;">
+              <h1>{{group.name}}</h1>
+              <h4 style="color: rgba(255, 255, 255, 0.897);">{{group.description}}</h4>
             </div>
-            <div id="content" *ngIf="item.id === this.iddi">
+            <div id="content" *ngIf="group.id === this.iddi">
               <ul>
-                <li><span>Ruolo: </span><span>{{item.role}}</span></li>
-                <li><span>id: </span><span>{{item.id}}</span></li>
+                <li><span>Ruolo: </span><span>{{group.role}}</span></li>
+                <li><span>id: </span><span>{{group.id}}</span></li>
               </ul>
               <span>partecipanti:</span>
-              <div *ngFor="let i of central.users" style="display: inline;">
-                <div *ngIf="i.group === this.iddi" style="display: inline;">
+              <div *ngFor="let user of central.users" style="display: inline;">
+                <div *ngIf="user.group === this.iddi" style="display: inline;">
                   <ul>                
                     <li>
-                      <h2 class="txt-capital" style="color: gray; display: inline;">{{i.name}} {{i.surname}}</h2>
+                      <h2 class="txt-capital" style="color: gray; display: inline;">
+                        {{user.name}} {{user.surname}}
+                      </h2>
                     </li>
                   </ul>
                 </div>
