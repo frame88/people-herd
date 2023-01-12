@@ -33,9 +33,11 @@
                 <input matInput placeholder="Es. Mario" name="name" [ngModel] required>
               </mat-form-field>
 
-              <mat-form-field class="example-full-width">
+              <mat-form-field appearance="fill">
                 <mat-label>Ruolo</mat-label>
-                <input matInput placeholder="Es. 0" name="role" [ngModel] required>
+                <mat-select name="role" [ngModel] required>
+                  <mat-option *ngFor="let role of central.roles" value="{{role.id}}" class="txt-capital">{{role.title}}</mat-option>
+                </mat-select>
               </mat-form-field>
 
               <mat-form-field class="example-full-width">
@@ -64,13 +66,13 @@
           <span>{{i}} </span>
         </th>
       </tr>
-      <tr *ngFor="let i of central.groups" class="tr-bg">
-        <td [routerLink]="['tabs/tab1/infogroup', i.id]">{{i.id}}</td>
-        <td [routerLink]="['tabs/tab1/infogroup', i.id]">Gruppo {{i.name}}</td>
-        <td [routerLink]="['tabs/tab1/infogroup', i.id]" class="pdr">{{i.description}}</td>
-        <td class="pl-5" [routerLink]="['tabs/tab1/infogroup', i.id]">{{i.role}}</td>
-        <td (click)="central.deleteGroups(i)">
-          <ion-icon *ngIf="i.role > 4 || i.role === null ? 'none' : null" class="trash" name="trash-outline" [style.display]=""></ion-icon>
+      <tr *ngFor="let group of central.groups" class="tr-bg">
+        <td [routerLink]="['tabs/tab1/infogroup', group.id]">{{group.id}}</td>
+        <td [routerLink]="['tabs/tab1/infogroup', group.id]">Gruppo {{group.name}}</td>
+        <td [routerLink]="['tabs/tab1/infogroup', group.id]" class="pdr">{{group.description}}</td>
+        <td [routerLink]="['tabs/tab1/infogroup', group.id]">{{group.role}}</td>
+        <td (click)="central.deleteGroups(group)">
+          <ion-icon *ngIf="group.role > 3 || group.role === null ? 'none' : null" class="trash" name="trash-outline" [style.display]=""></ion-icon>
         </td>
       </tr>
     </table>

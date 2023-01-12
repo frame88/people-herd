@@ -6,6 +6,7 @@ import { Tab1Page } from './tab1.page';
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import {MatInputModule} from '@angular/material/input';
     CommonModule,
     FormsModule,
     Tab1PageRoutingModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule
   ],
   declarations: [Tab1Page]
 })
