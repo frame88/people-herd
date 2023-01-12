@@ -65,9 +65,9 @@
                 </mat-form-field>
                 <mat-form-field appearance="fill" style="width: 100%;">
                   <mat-label>Assegna un gruppo all'utente</mat-label>
-                  <mat-select>
-                    <mat-option *ngFor="let item of central.groups" [value]="item.value">
-                      {{item.id}}
+                  <mat-select [ngModel] required>
+                    <mat-option *ngFor="let group of central.groups" value="{{group.role}}">
+                      {{group.name}}
                     </mat-option>
                   </mat-select>
                 </mat-form-field>

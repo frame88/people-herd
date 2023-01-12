@@ -1,19 +1,19 @@
 {
   "roles": [
     {
-      "id": 0,
+      "id": 1,
       "title": "admin",
       "description": "Questo ruolo gode dei permessi maggiori, può modificare ed eliminare parametri.",
       "default": true
     },
     {
-      "id": 1,
+      "id": 2,
       "title": "associate",
       "description": "Questo ruolo fa parte dell'organizzazione, può modificare parametri.",
       "default": true
     },
     {
-      "id": 2,
+      "id": 3,
       "title": "watcher",
       "description": "Questo ruolo è un persona esterna, non può modificare nè eliminare parametri",
       "default": true
