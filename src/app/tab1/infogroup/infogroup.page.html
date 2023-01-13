@@ -32,16 +32,16 @@
                 <img id="icon-mod" src="../../../assets/images/people-roof-solid.svg" alt="icon set group">
               </div>
               <div id="content" *ngIf="group.id === this.iddi">
-                <ul>
+                <ul id="parametri">
                   <li><span>Ruolo: </span><span>{{group.role}}</span></li>
                   <li><span>id: </span><span>{{group.id}}</span></li>
                 </ul>
                 <span>partecipanti:</span>
                 <div *ngFor="let user of central.users" style="display: inline;">
                   <div *ngIf="user.group === this.iddi" style="display: inline;">
-                    <ul>
+                    <ul id="partecipanti">
                       <li>
-                        <h2 class="txt-capital" style="color: gray; display: inline;">
+                        <h2 class="txt-capital" style="color: gray; display: inline; margin: 0; padding: 0;">
                           {{user.name}} {{user.surname}}
                         </h2>
                       </li>
@@ -60,18 +60,18 @@
               <div id="circle-form">
                 <form #g="ngForm" (submit)="central.editGroup(g, iddi)">
                   <mat-form-field class="example-full-width">
-                    <mat-label>Nome</mat-label>
+                    <mat-label>Rinomina gruppo</mat-label>
                     <input matInput placeholder="Es. Admin" name="name" [ngModel]>
                   </mat-form-field>
                   <mat-form-field class="example-full-width">
-                    <mat-label>Descrizione</mat-label>
+                    <mat-label>Nuova descrizione</mat-label>
                     <textarea matInput placeholder="Es. Gruppo sportivo per..." name="description" [ngModel]></textarea>
                   </mat-form-field>
                   <mat-form-field appearance="fill">
-                    <mat-label>Ruolo</mat-label>
+                    <mat-label>Nuovo ruolo</mat-label>
                     <mat-select name="role" [ngModel]>
                       <mat-option *ngFor="let role of central.roles" value="{{role.id}}">
-                        {{role.title}}
+                        <span class="txt-capital">{{role.title}}</span>
                       </mat-option>
                     </mat-select>
                   </mat-form-field>

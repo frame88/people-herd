@@ -28,7 +28,7 @@
         <ng-template>
           <ion-content class="ion-padding">
             <form #f="ngForm" (submit)="central.addGroup(f)" class="example-form">
-              <mat-form-field class="example-full-width">
+              <mat-form-field class="">
                 <mat-label>Nome gruppo</mat-label>
                 <input matInput placeholder="Es. Mario" name="name" [ngModel] required>
               </mat-form-field>
@@ -40,10 +40,11 @@
                 </mat-select>
               </mat-form-field>
 
-              <mat-form-field class="example-full-width">
-                <mat-label>Descrizione</mat-label>
-                <input matInput placeholder="Es. gruppo del dopolavoro" name="description" [ngModel] >
+              <mat-form-field>
+                <mat-label>Descrizione...</mat-label>
+                <textarea matInput placeholder="Es. Gruppo sportivo per..." name="description" [ngModel]></textarea>
               </mat-form-field>
+
 
               <button class="purple-btn" type="submit" style="margin: 0;">
                 Conferma

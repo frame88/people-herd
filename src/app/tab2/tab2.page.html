@@ -24,7 +24,7 @@
           <ion-content class="ion-padding">
             <form #f="ngForm" (submit)="central.addUsers(f)" class="example-form">
 
-              <mat-form-field appearance="fill">
+              <mat-form-field appearance="fill" style="width: 100%;">
                 <mat-label>Gruppo</mat-label>
                 <mat-select name="group" [ngModel] required>
                   <mat-option *ngFor="let group of central.groups" value="{{group.id}}">
