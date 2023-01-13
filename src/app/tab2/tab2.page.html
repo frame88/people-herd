@@ -77,6 +77,7 @@
         <td [routerLink]="['tabs/tab2/usermod', i.id]">{{i.mail}}</td>
         <td class="pl-5" [routerLink]="['tabs/tab2/usermod', i.id]">{{i.group}}</td>
         <td>
+          <!-- <ion-icon class="trash" name="trash-outline" (click)="presentAlert()"></ion-icon> -->
           <ion-icon class="trash" name="trash-outline" (click)="central.deleteUsers(i)"></ion-icon>
         </td>
       </tr>

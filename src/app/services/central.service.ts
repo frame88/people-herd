@@ -4,6 +4,8 @@ import { NgForm } from '@angular/forms';
 import { IGroups } from '../models/IGroups';
 import { IUsers } from '../models/IUsers';
 import { IRoles } from '../models/IRoles';
+import { AlertController } from '@ionic/angular';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -22,7 +24,8 @@ export class CentralService {
   url = 'http://localhost:3000';
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private alertCtrl: AlertController
   ) { }
 
   //_______GET
@@ -100,6 +103,7 @@ export class CentralService {
     }
 
     deleteRole(users: IRoles) {
+      /*
       this.http.delete(`${this.url}/roles/${users.id}`)
       .subscribe(() => {
         const index = this.roles.findIndex((d: { id: number; }) => d.id === users.id);
@@ -107,15 +111,33 @@ export class CentralService {
       },
       err => this.error = err
       );
+      */
     }
 
     deleteUsers(user: IUsers) {
-      this.http.delete(`${this.url}/users/${user.id}`).subscribe(() => {
-          const index = this.users.indexOf(user);
-          this.users.splice(index, 1);
-        },
-        err => this.error = err
-        );
+      this.alertCtrl.create({
+        header: 'Sei sicuro?',
+        message: 'Stai per rimuovere definitivamente questo utente.',
+        buttons: [
+          {
+            text: 'Annulla',
+            role: 'cancel'
+          },
+          {
+            text: 'Continua',
+            handler:() => {
+              this.http.delete(`${this.url}/users/${user.id}`).subscribe(() => {
+                const index = this.users.indexOf(user);
+                this.users.splice(index, 1);
+            },
+            err => this.error = err
+            );
+            }
+          }
+        ]
+      }).then(alertElem => {
+        alertElem.present()
+      })
     }
 
     edit(form: NgForm, id: number) {
