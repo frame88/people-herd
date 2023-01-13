@@ -7,6 +7,7 @@ import { Tab1Page } from './tab1.page';
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import {MatSelectModule} from '@angular/material/select';
     FormsModule,
     Tab1PageRoutingModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    DragDropModule
   ],
   declarations: [Tab1Page]
 })

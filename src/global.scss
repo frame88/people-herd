@@ -82,14 +82,18 @@ a {
   border-radius: 15px 65px 15px 15px;
   box-shadow: 5px 10px 15px #00000062;
 
+  &:hover {
+    transform: scale(1.03);
+    transition-duration: 0.3s;
+  }
+
   #header {
     background-color: var(--sunset_pastel);
     border-radius: 15px 60px 0px 0px;
     padding: 1em;
     color: white;
-    background: rgb(255, 117, 20);
-    background: linear-gradient(43deg, rgba(255, 117, 20, 1) 0%, rgba(166, 166, 255, 1) 100%);
-  h3 {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(97deg, rgba(2, 0, 36, 1) 31%, rgba(9, 9, 121, 1) 86%);    h3 {
       margin: 0;
       padding: 0;
       letter-spacing: 1px;
