@@ -8,3 +8,14 @@
   box-shadow: 5px 10px 15px #00000062;
 }
 */
+
+#header {
+  position: relative;
+}
+#icon-mod {
+  position: absolute;
+  right: 15px;
+  bottom: -105px;
+  width: 170px;
+  transform: translateY(-100px);
+}

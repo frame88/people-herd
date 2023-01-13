@@ -1,13 +1,13 @@
 //TABELLE
 th {
-    position: relative;
+  position: relative;
 }
 
 .tr-bg {
 
-    &:hover {
-        background-color: rgba(255, 255, 255, 0.479);
-    }
+  &:hover {
+      background-color: rgba(255, 255, 255, 0.479);
+  }
 }
 
 table {
@@ -53,7 +53,7 @@ table {
         border-bottom: 1px solid rgba(255, 255, 255, 0.445);
         cursor: pointer;
     }
-
+    
     .trash {
         padding: 0.5em;
         cursor: pointer;

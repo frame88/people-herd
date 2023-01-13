@@ -64,6 +64,12 @@ a {
   width: 70px;
   bottom: 10%;
   left: 20px;
+  filter: drop-shadow(15px 15px 8px #00000073);
+
+  &:hover {
+    transform: scale(1.1);
+    transition-duration: 0.3s;
+  }
 }
 
 
