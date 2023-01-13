@@ -13,13 +13,12 @@
       </button>
     </div>
 
-    <div *ngFor="let i of central.groups" class="ion-margin">
-      <!-- <div *ngIf="users.i">Content to render when condition is true.</div> -->
-      <div *ngIf="i.id === this.iddi">
+    <!-- <div *ngFor="let i of central.groups" class="ion-margin">
+      <div *ngIf="i.id === this.iddi" id="heading-container">
         <h1 style="margin-bottom: 0; color: rgb(166, 166, 255);" class="txt-capital">{{i.name}}</h1>
         <h5>{{i.description}}</h5>
       </div>
-    </div>
+    </div> -->
 
       <div style="display: flex; justify-content: center;">
         <div class="w-60 left" style="margin: 0;">
@@ -37,7 +36,7 @@
                 <span>partecipanti:</span>
                 <div *ngFor="let user of central.users" style="display: inline;">
                   <div *ngIf="user.group === this.iddi" style="display: inline;">
-                    <ul>                
+                    <ul>
                       <li>
                         <h2 class="txt-capital" style="color: gray; display: inline;">
                           {{user.name}} {{user.surname}}
@@ -47,11 +46,11 @@
                   </div>
                 </div>
               </div>
-  
+
             </div>
           </div>
         </div>
-  
+
         <div class="w-40 right" style="margin: 0; margin-left: 4em;">
           <div style="display: flex;">
             <div style="display: flex; justify-content: center; position: relative; padding: 3em;">
@@ -79,14 +78,14 @@
                       <ion-icon style="font-size: 120%;" name="checkmark-circle-outline"></ion-icon>
                     </button>
                   </ion-row>
-  
+
                 </form>
               </div>
               <img id="border-spin" style="position: absolute; top: -40px; width: 800px; z-index: 1;"
                 src="../../../assets/images/3.png" alt="">
             </div>
           </div>
-  
+
         </div>
       </div>
     </div>

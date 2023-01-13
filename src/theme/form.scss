@@ -25,11 +25,11 @@
 }
 
 #circle-form {
-    z-index: 2;
-    box-shadow: 5px 10px 15px #00000062;
-    padding: 5px;
-    border-radius: 50%;
-    background-color: rgba(9, 165, 255, 0.205);
+  z-index: 2;
+  box-shadow: 5px 10px 15px #00000062;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: var(--glass_filter);
 }
 // #circle-form {
 //     width: 500px;
