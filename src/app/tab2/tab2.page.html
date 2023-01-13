@@ -22,8 +22,15 @@
       <ion-popover trigger="trigger-button">
         <ng-template>
           <ion-content class="ion-padding">
-            <form #f="ngForm" (submit)="central.addUsers(f)" class="example-form">
 
+            <form #f="ngForm" (submit)="central.addUsers(f)" class="example-form">
+              <ion-list>
+                <ion-item>
+                  <ion-select name="group" [ngModel] placeholder="Gruppo">
+                    <ion-select-option *ngFor="let group of central.groups" value="{{group.id}}">{{group.name}}</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </ion-list>
               <mat-form-field appearance="fill" style="width: 100%;">
                 <mat-label>Gruppo</mat-label>
                 <mat-select name="group" [ngModel] required>
