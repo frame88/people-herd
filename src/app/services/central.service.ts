@@ -94,35 +94,33 @@ export class CentralService {
 
   //_______DELETE
   deleteGroups(users: IGroups) {
-    /*
-      */
-
-      this.alertCtrl.create({
-      header: 'Sei sicuro?',
-      message: 'Stai per rimuovere definitivamente questo gruppo.',
-      buttons: [
-        {
-          text: 'Annulla',
-          role: 'cancel'
-        },
-        {
-          text: 'Continua',
-          handler:() => {
-            this.http.delete(`${this.url}/groups/${users.id}`)
-              .subscribe(() => {
-                const index = this.groups.findIndex((d: { id: number; }) => d.id === users.id);
-                this.groups.splice(users.id, 1);
-              },
-              err => this.error = err
-              );
-          }
+    this.alertCtrl.create({
+    header: 'Sei sicuro?',
+    message: 'Stai per rimuovere definitivamente questo gruppo.',
+    buttons: [
+      {
+        text: 'Annulla',
+        role: 'cancel'
+      },
+      {
+        text: 'Continua',
+        handler:() => {
+          this.http.delete(`${this.url}/groups/${users.id}`)
+            .subscribe(() => {
+              const index = this.groups.findIndex((d: { id: number; }) => d.id === users.id);
+              this.groups.splice(users.id, 1);
+              this.getGroups();
+            },
+            err => this.error = err
+            );
         }
-      ]
+      }
+    ]
     }).then(alertElem => {
       alertElem.present()
     })
 
-    }
+  }
 
     deleteRole(users: IRoles) {
       this.alertCtrl.create({
