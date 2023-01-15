@@ -15,8 +15,8 @@
       </button>
     </div>
 
-    <div style="display: flex; justify-content: center;">
-      <div class="w-60 left" style="margin: 0;">
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; width: 100vw;">
+      <div class="left" style="margin: 0;">
         <div id="card">
           <div *ngFor="let item of central.users">
             <div id="header" *ngIf="item.id === this.iddi" style="position: relative;">
@@ -42,7 +42,7 @@
         </div>
       </div>
 
-      <div class="w-40 right" style="margin: 0; margin-left: 4em;">
+      <div class="right" style="margin: 0;">
         <div style="display: flex;">
           <div style="display: flex; justify-content: center; position: relative; padding: 3em;">
             <div id="circle-form">

@@ -30,7 +30,9 @@
 
   .left {
     width: auto;
+    margin-left: 0;
   }
+
   .right {
     width: auto;
   }
@@ -42,9 +44,4 @@
       right: 5px;
     }
   }
-
-  .right {
-    margin-left: 0;
-  }
-
 }
