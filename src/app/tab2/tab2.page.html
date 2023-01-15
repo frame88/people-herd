@@ -6,14 +6,14 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" matRipple [matRippleColor]="central.color"
+>
   <div class="bicolor">
     <img src="../../assets/images/monopeople.svg" class="bg-img" alt="">
     <div *ngIf="central.error" style=" padding:1em ;text-align: center; color: white; background-color: rgb(255, 115, 115);">
       ERROR
       <ion-icon name="close-circle-outline" (click)="central.error = null" style="margin-left: 5px; cursor: pointer;"></ion-icon>
     </div>
-
     <div style="display: flex; flex-wrap: wrap;">
 
       <button id="trigger-button" class="purple-btn ion-margin">

@@ -11,6 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class Tab1Page implements OnInit {
 
+  color!: string;
+
   constructor(
     private http: HttpClient,
     public central: CentralService,

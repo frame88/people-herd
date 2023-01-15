@@ -64,7 +64,7 @@ a {
   width: 70px;
   bottom: 10%;
   left: 20px;
-  filter: drop-shadow(15px 15px 8px #00000073);
+  //filter: drop-shadow(15px 15px 8px #00000073);
 
   &:hover {
     transform: scale(1.1);
@@ -92,12 +92,16 @@ a {
     border-radius: 15px 60px 0px 0px;
     padding: 1em;
     color: white;
-    background: rgb(2, 0, 36);
-    background: linear-gradient(97deg, rgba(2, 0, 36, 1) 31%, rgba(9, 9, 121, 1) 86%);    h3 {
-      margin: 0;
-      padding: 0;
-      letter-spacing: 1px;
-      text-transform: capitalize;
+    // background: rgb(2, 0, 36);
+    // background: linear-gradient(97deg, rgba(2, 0, 36, 1) 31%, rgba(9, 9, 121, 1) 86%);    h3 {
+    //   margin: 0;
+    //   padding: 0;
+    //   letter-spacing: 1px;
+    //   text-transform: capitalize;
+    // }
+
+    h1 {
+      margin-bottom: 0;
     }
   }
 

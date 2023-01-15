@@ -4,7 +4,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content scrollbar>
+<ion-content scrollbar matRipple [matRippleColor]="central.color"
+>
 
   <div class="bicolor" style="height: 100vh;">
     <div>
@@ -20,7 +21,7 @@
           <div *ngFor="let item of central.users">
             <div id="header" *ngIf="item.id === this.iddi" style="position: relative;">
               <h1>{{item.name}}</h1>
-              <h3>{{item.surname}}</h3>
+              <h4>{{item.surname}}</h4>
               <img id="icon-mod" src="../../../assets/images/user-mod.svg" alt="icon mod user">
             </div>
             <div id="content" *ngIf="item.id === this.iddi">

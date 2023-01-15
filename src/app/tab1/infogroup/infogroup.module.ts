@@ -10,6 +10,8 @@ import { InfogroupPage } from './infogroup.page';
 import {MatIconModule} from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import {MatRippleModule} from '@angular/material/core';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -18,7 +20,8 @@ import {MatSelectModule} from '@angular/material/select';
     InfogroupPageRoutingModule,
     MatIconModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatRippleModule
   ],
   declarations: [InfogroupPage]
 })

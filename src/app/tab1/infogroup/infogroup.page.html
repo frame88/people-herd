@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content matRipple [matRippleColor]="central.color">
   <div class="bicolor" style="overflow-y: hidden;">
     <div>
       <button class="txt-capital purple-btn" routerLink="/tabs/tab1">
@@ -13,13 +13,6 @@
       </button>
     </div>
 
-    <!-- <div *ngFor="let i of central.groups" class="ion-margin">
-      <div *ngIf="i.id === this.iddi" id="heading-container">
-        <h1 style="margin-bottom: 0; color: rgb(166, 166, 255);" class="txt-capital">{{i.name}}</h1>
-        <h5>{{i.description}}</h5>
-      </div>
-    </div> -->
-
       <div style="display: flex; justify-content: center;">
         <div class="w-60 left" style="margin: 0;">
           <div id="card">
@@ -27,7 +20,7 @@
               <div id="header" *ngIf="group.id === this.iddi" style="position: relative;">
                 <div style="width: 60%;">
                   <h1>{{group.name}}</h1>
-                  <h4 style="color: rgba(255, 255, 255, 0.897);">{{group.description}}</h4>
+                  <h5 style="color: rgba(255, 255, 255, 0.897);">{{group.description}}</h5>
                 </div>
                 <img id="icon-mod" src="../../../assets/images/people-roof-solid.svg" alt="icon set group">
               </div>

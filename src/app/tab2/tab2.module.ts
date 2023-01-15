@@ -8,6 +8,9 @@ import { Tab2PageRoutingModule } from './tab2-routing.module';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatRippleModule} from '@angular/material/core';
+
+
 @NgModule({
   imports: [
     IonicModule,
@@ -16,7 +19,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     Tab2PageRoutingModule,
     MatInputModule,
     MatSelectModule,
-    DragDropModule
+    DragDropModule,
+    MatRippleModule
   ],
   declarations: [Tab2Page]
 })

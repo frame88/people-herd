@@ -7,7 +7,7 @@ import { Tab3Page } from './tab3.page';
 import { Tab3PageRoutingModule } from './tab3-routing.module';
 import {MatInputModule} from '@angular/material/input';
 import {DragDropModule} from '@angular/cdk/drag-drop';
-
+import {MatRippleModule} from '@angular/material/core';
 @NgModule({
   imports: [
     IonicModule,
@@ -15,7 +15,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     FormsModule,
     Tab3PageRoutingModule,
     MatInputModule,
-    DragDropModule
+    DragDropModule,
+    MatRippleModule
   ],
   declarations: [Tab3Page]
 })

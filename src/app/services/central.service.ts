@@ -10,6 +10,7 @@ import { AlertController } from '@ionic/angular';
   providedIn: 'root'
 })
 export class CentralService {
+  color!: string;
   //tables labels
   groups_labels: string[] = ['id', 'nome', 'descrizione', 'ruolo'];
   users_labels: string[] = ['id', 'nome', 'cognome', 'nickname', 'mail', 'gruppo'];
