@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content matRipple [matRippleColor]="central.color">
-  <div class="bicolor" style="overflow-y: hidden;">
+  <div class="bicolor">
     <div>
       <button class="txt-capital purple-btn" routerLink="/tabs/tab1">
         <ion-icon name="arrow-back-outline"></ion-icon>
@@ -13,12 +13,12 @@
       </button>
     </div>
 
-      <div style="display: flex; justify-content: center;">
-        <div class="w-60 left" style="margin: 0;">
+      <div style="display: flex; justify-content: center; flex-wrap: wrap; width: 100vw;">
+        <div class="left">
           <div id="card">
             <div *ngFor="let group of central.groups">
               <div id="header" *ngIf="group.id === this.iddi" style="position: relative;">
-                <div style="width: 60%;">
+                <div>
                   <h1>{{group.name}}</h1>
                   <h5 style="color: rgba(255, 255, 255, 0.897);">{{group.description}}</h5>
                 </div>
@@ -47,7 +47,7 @@
           </div>
         </div>
 
-        <div class="w-40 right" style="margin: 0; margin-left: 4em;">
+        <div class="right" style="margin: 0;">
           <div style="display: flex;">
             <div style="display: flex; justify-content: center; position: relative; padding: 3em;">
               <div id="circle-form">

@@ -1,6 +1,20 @@
+.left {
+  width: 50%;
+}
+.right {
+  width: 30%;
+}
+
+#card {
+  width: 90%;
+}
 
 #header {
   position: relative;
+
+  div {
+    width: 60%;
+  }
 }
 
 #icon-mod {
@@ -9,4 +23,28 @@
   bottom: -105px;
   width: 170px;
   transform: translateY(-100px);
+}
+
+
+@media screen and (max-width: 600px) {
+
+  .left {
+    width: auto;
+  }
+  .right {
+    width: auto;
+  }
+
+  #card {
+
+    #icon-mod {
+      width: 150px;
+      right: 5px;
+    }
+  }
+
+  .right {
+    margin-left: 0;
+  }
+
 }
