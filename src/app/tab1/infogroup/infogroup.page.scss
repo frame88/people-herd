@@ -6,14 +6,11 @@
 }
 
 #card {
-  width: 90%;
-}
-
-#header {
-  position: relative;
-
-  div {
-    width: 60%;
+  #header {
+    position: relative;
+    div {
+      width: 60%;
+    }
   }
 }
 
@@ -29,8 +26,7 @@
 @media screen and (max-width: 600px) {
 
   .left {
-    width: auto;
-    margin-left: 0;
+    width: 100%;
   }
 
   .right {
@@ -38,10 +34,13 @@
   }
 
   #card {
-
     #icon-mod {
       width: 150px;
       right: 5px;
     }
+  }
+
+  #icon-mod {
+    width: 160px;
   }
 }

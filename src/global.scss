@@ -164,8 +164,12 @@ ul {
 @media screen and (max-width: 1500px) {
   #logo {
     top: 8%;
-    right: 3%;
+    right: 0;
+    border-radius: 50% 0px 0px 50%;
     left: auto;
+    width: 70px;
+    background-color: white;
+    padding: 1em;
   }
 }
 
