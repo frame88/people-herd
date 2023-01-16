@@ -5,15 +5,15 @@ import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
-  selector: 'app-usermod',
-  templateUrl: './usermod.page.html',
-  styleUrls: ['./usermod.page.scss'],
+  selector: 'app-infoutente',
+  templateUrl: './infoutente.page.html',
+  styleUrls: ['./infoutente.page.scss'],
 })
-export class UsermodPage implements OnInit {
+export class infoutentePage implements OnInit {
 
   iddi = +this.activatedRoute.snapshot.params['id'];
   hide = true;
-  
+
   constructor(
     public central: CentralService,
     private http: HttpClient,

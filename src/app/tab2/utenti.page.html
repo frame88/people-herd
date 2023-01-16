@@ -28,21 +28,6 @@
               placeholder="Id gruppo"
               name="group" min="1" max="" [ngModel]
               style="margin-bottom: 1em; padding: 1em; background-color: white; border-radius: 5px 5px 0px 0px; border: 0; width: 100%; font-size: 18px; color: black;">
-              <!-- <ion-list>
-                <ion-item>
-                  <ion-select name="group" [ngModel] placeholder="Gruppo">
-                    <ion-select-option *ngFor="let group of central.groups" value="{{group.id}}">{{group.name}}</ion-select-option>
-                  </ion-select>
-                </ion-item>
-              </ion-list>
-              <mat-form-field appearance="fill" style="width: 100%;">
-                <mat-label>Gruppo</mat-label>
-                <mat-select name="group" [ngModel] required>
-                  <mat-option *ngFor="let group of central.groups" value="{{group.id}}">
-                    {{group.name}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field> -->
               <mat-form-field class="example-full-width">
                 <mat-label>Nome</mat-label>
                 <input matInput placeholder="Es. Mario" name="name" [ngModel] required>
@@ -81,12 +66,10 @@
         </th>
       </tr>
       <tr *ngFor="let i of central.users" style="cursor: pointer;" class="tr-bg">
-        <td [routerLink]="['tabs/tab2/usermod', i.id]">{{i.id}}</td>
-        <td [routerLink]="['tabs/tab2/usermod', i.id]" class="txt-capital">{{i.name}}</td>
-        <td [routerLink]="['tabs/tab2/usermod', i.id]" class="txt-capital">{{i.surname}}</td>
-        <td [routerLink]="['tabs/tab2/usermod', i.id]" class="txt-capital">{{i.username}}</td>
-        <td [routerLink]="['tabs/tab2/usermod', i.id]">{{i.mail}}</td>
-        <td class="pl-5" [routerLink]="['tabs/tab2/usermod', i.id]">{{i.group}}</td>
+        <td [routerLink]="['tabs/utenti/infoutente', i.id]">{{i.id}}</td>
+        <td [routerLink]="['tabs/utenti/infoutente', i.id]" class="txt-capital">{{i.name}} {{i.surname}}</td>
+        <td [routerLink]="['tabs/utenti/infoutente', i.id]" class="txt-capital">{{i.username}}</td>
+        <td class="pl-5" [routerLink]="['tabs/utenti/infoutente', i.id]">{{i.group}}</td>
         <td>
           <ion-icon class="trash" name="trash-outline" (click)="central.deleteUsers(i)"></ion-icon>
         </td>

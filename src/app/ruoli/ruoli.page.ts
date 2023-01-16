@@ -1,13 +1,13 @@
-import { CentralService } from './../services/central.service';
+import { CentralService } from '../services/central.service';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-tab3',
-  templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss']
+  selector: 'app-ruoli',
+  templateUrl: 'ruoli.page.html',
+  styleUrls: ['ruoli.page.scss']
 })
-export class Tab3Page {
+export class ruoliPage {
 
   constructor(
     private http: HttpClient,

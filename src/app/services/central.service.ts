@@ -13,7 +13,7 @@ export class CentralService {
   color!: string;
   //tables labels
   groups_labels: string[] = ['id', 'nome', 'descrizione', 'ruolo'];
-  users_labels: string[] = ['id', 'nome', 'cognome', 'nickname', 'mail', 'gruppo'];
+  users_labels: string[] = ['id', 'nome', 'username', 'gruppo'];
   roles_labels: string[] = ['id', 'titolo', 'descrizione', 'default'];
 
   groups: IGroups[] | any;

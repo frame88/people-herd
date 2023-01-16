@@ -4,11 +4,11 @@ import { CentralService } from '../services/central.service';
 import { AlertController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  selector: 'app-utenti',
+  templateUrl: 'utenti.page.html',
+  styleUrls: ['utenti.page.scss']
 })
-export class Tab2Page implements OnInit {
+export class utentiPage implements OnInit {
 
   constructor(
     public central: CentralService,

@@ -2,9 +2,9 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Tab2Page } from './tab2.page';
+import { utentiPage } from './utenti.page';
 
-import { Tab2PageRoutingModule } from './tab2-routing.module';
+import { utentiPageRoutingModule } from './utenti-routing.module';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {DragDropModule} from '@angular/cdk/drag-drop';
@@ -16,12 +16,12 @@ import {MatRippleModule} from '@angular/material/core';
     IonicModule,
     CommonModule,
     FormsModule,
-    Tab2PageRoutingModule,
+    utentiPageRoutingModule,
     MatInputModule,
     MatSelectModule,
     DragDropModule,
     MatRippleModule
   ],
-  declarations: [Tab2Page]
+  declarations: [utentiPage]
 })
-export class Tab2PageModule {}
+export class utentiPageModule {}

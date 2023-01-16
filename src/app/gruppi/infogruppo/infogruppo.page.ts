@@ -4,11 +4,11 @@ import { CentralService } from 'src/app/services/central.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-infogroup',
-  templateUrl: './infogroup.page.html',
-  styleUrls: ['./infogroup.page.scss'],
+  selector: 'app-infogruppo',
+  templateUrl: './infogruppo.page.html',
+  styleUrls: ['./infogruppo.page.scss'],
 })
-export class InfogroupPage implements OnInit {
+export class infogruppoPage implements OnInit {
 
   iddi = +this.activatedRoute.snapshot.params['id'];
   hide = true;

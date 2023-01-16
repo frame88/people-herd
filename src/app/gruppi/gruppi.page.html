@@ -69,10 +69,10 @@
         </th>
       </tr>
       <tr *ngFor="let group of central.groups" class="tr-bg">
-        <td [routerLink]="['tabs/tab1/infogroup', group.id]">{{group.id}}</td>
-        <td [routerLink]="['tabs/tab1/infogroup', group.id]">Gruppo {{group.name}}</td>
-        <td [routerLink]="['tabs/tab1/infogroup', group.id]" class="pdr">{{group.description}}</td>
-        <td [routerLink]="['tabs/tab1/infogroup', group.id]">{{group.role}}</td>
+        <td [routerLink]="['tabs/gruppi/infogruppo', group.id]">{{group.id}}</td>
+        <td [routerLink]="['tabs/gruppi/infogruppo', group.id]">Gruppo {{group.name}}</td>
+        <td [routerLink]="['tabs/gruppi/infogruppo', group.id]" class="pdr">{{group.description}}</td>
+        <td [routerLink]="['tabs/gruppi/infogruppo', group.id]">{{group.role}}</td>
         <td (click)="central.deleteGroups(group)">
           <ion-icon *ngIf="group.role > 3 || group.role === null ? 'none' : null" class="trash" name="trash-outline" [style.display]=""></ion-icon>
         </td>

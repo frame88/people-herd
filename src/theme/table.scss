@@ -39,9 +39,10 @@ table {
         }
 
         span {
-            background-color: var(--red_pastel);
+            background-color: var(--border_label);
             padding: 5px;
             padding-right: 17px;
+            border-radius: 0px 3px 3px 0px;
         }
     }
 
