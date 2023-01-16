@@ -10,7 +10,11 @@ const routes: Routes = [
   {
     path: 'tabs/gruppi/:id',
     loadChildren: () => import('./gruppi/infogruppo/infogruppo.module').then( m => m.infogruppoPageModule),
+  },  {
+    path: 'login',
+    loadChildren: () => import('./core/login/login.module').then( m => m.LoginPageModule)
   }
+
 ];
 @NgModule({
   imports: [
