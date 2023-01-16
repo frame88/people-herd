@@ -14,8 +14,23 @@ const routes: Routes = [
   {
     path: 'tabs/gruppi/infogruppo/:id',
     loadChildren: () => import('./infogruppo/infogruppo.module').then( m => m.infogruppoPageModule)
+  },
+  {
+    path: 'nuovogruppo',
+    loadChildren: () => import('./nuovogruppo/nuovogruppo.module').then( m => m.NuovogruppoPageModule)
+  },
+  {
+    path: 'tabs/gruppi/nuovogruppo',
+    loadChildren: () => import('./nuovogruppo/nuovogruppo.module').then( m => m.NuovogruppoPageModule)
+  },
+  {
+    path: 'modificagruppo',
+    loadChildren: () => import('./modificagruppo/modificagruppo.module').then( m => m.ModificagruppoPageModule)
+  },
+  {
+    path: 'tabs/gruppi/modificagruppo/:id',
+    loadChildren: () => import('./modificagruppo/modificagruppo.module').then( m => m.ModificagruppoPageModule)
   }
-
 ];
 
 @NgModule({

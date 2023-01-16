@@ -16,43 +16,9 @@
     </div>
     <div style="display: flex; flex-wrap: wrap;">
 
-      <button id="trigger-button" class="purple-btn ion-margin">
+      <button routerLink="./nuovoutente" class="purple-btn ion-margin">
         <ion-icon name="add-outline"></ion-icon>
-        aggiungi un nuovo membro</button>
-      <ion-popover trigger="trigger-button">
-        <ng-template>
-          <ion-content class="ion-padding">
-
-            <form #f="ngForm" (submit)="central.addUsers(f)" class="example-form">
-              <input type="number"
-              placeholder="Id gruppo"
-              name="group" min="1" max="" [ngModel]
-              style="margin-bottom: 1em; padding: 1em; background-color: white; border-radius: 5px 5px 0px 0px; border: 0; width: 100%; font-size: 18px; color: black;">
-              <mat-form-field class="example-full-width">
-                <mat-label>Nome</mat-label>
-                <input matInput placeholder="Es. Mario" name="name" [ngModel] required>
-              </mat-form-field>
-              <mat-form-field class="example-full-width">
-                <mat-label>Cognome</mat-label>
-                <input matInput placeholder="Es. Rossi" name="surname" [ngModel]>
-              </mat-form-field>
-              <mat-form-field class="example-full-width">
-                <mat-label>Nickname</mat-label>
-                <input matInput placeholder="Es. Pippo" name="username" [ngModel]>
-              </mat-form-field>
-              <mat-form-field class="example-full-width">
-                <mat-label>Mail</mat-label>
-                <input matInput placeholder="Es. mario.rossi@gmail.com" name="mail" [ngModel]>
-              </mat-form-field>
-              <button type="submit" class="purple-btn" style="margin: 0;">
-                Conferma
-                <ion-icon style="font-size: 120%;" name="checkmark-circle-outline"></ion-icon>
-              </button>
-            </form>
-
-          </ion-content>
-        </ng-template>
-      </ion-popover>
+        aggiungi un nuovo utente</button>
 
     </div>
 
@@ -71,6 +37,8 @@
         <td [routerLink]="['tabs/utenti/infoutente', i.id]" class="txt-capital">{{i.username}}</td>
         <td class="pl-5" [routerLink]="['tabs/utenti/infoutente', i.id]">{{i.group}}</td>
         <td>
+          <ion-icon [routerLink]="['tabs/utenti/modificautente', i.id]"
+             class="pencil" name="pencil-outline"></ion-icon>
           <ion-icon class="trash" name="trash-outline" (click)="central.deleteUsers(i)"></ion-icon>
         </td>
       </tr>

@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Modifica Utente</ion-title>
+    <ion-title>Dettaglio Utente</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -9,7 +9,7 @@
 
   <div class="bicolor" style="height: 100vh;">
     <div>
-      <button class="txt-capital purple-btn" routerLink="/tabs/gruppi">
+      <button class="txt-capital purple-btn" routerLink="/tabs/utenti">
         <ion-icon name="arrow-back-outline"></ion-icon>
         indietro
       </button>
@@ -42,66 +42,6 @@
         </div>
       </div>
 
-      <div class="right" style="margin: 0;">
-        <div style="display: flex;">
-          <div style="display: flex; justify-content: center; position: relative; padding: 3em;">
-            <div id="circle-form">
-
-              <form #g="ngForm" (submit)="central.edit(g, iddi)">
-                <mat-form-field class="example-full-width">
-                  <mat-label>Nome</mat-label>
-                  <input matInput placeholder="Es. Mario" name="name" [ngModel]>
-                </mat-form-field>
-                <mat-form-field class="example-full-width">
-                  <mat-label>Cognome</mat-label>
-                  <input matInput placeholder="Es. Bianchi" name="surname" [ngModel]>
-                </mat-form-field>
-                <mat-form-field class="example-full-width">
-                  <mat-label>Username</mat-label>
-                  <input matInput placeholder="Es. mariopallido" name="username" [ngModel]>
-                </mat-form-field>
-                <mat-form-field class="example-full-width">
-                  <mat-label>Mail</mat-label>
-                  <input matInput placeholder="Es. mario.bianchi@example.com" name="mail" [ngModel]>
-                </mat-form-field>
-                <mat-form-field appearance="fill" style="width: 100%;">
-                  <mat-label>Assegna un gruppo all'utente</mat-label>
-                  <mat-select [ngModel] required>
-                    <mat-option *ngFor="let group of central.groups" type="number" value="group.role">
-                      {{group.name}}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field>
-                <mat-form-field appearance="fill" class="pass">
-                  <mat-label>Inserisci una password</mat-label>
-                  <input matInput [type]="hide ? 'password' : 'text'">
-                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                    [attr.aria-pressed]="hide">
-                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                  </button>
-                </mat-form-field>
-                <mat-form-field appearance="fill" class="pass">
-                  <mat-label>Conferma la password</mat-label>
-                  <input matInput [type]="hide ? 'password' : 'text'">
-                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                    [attr.aria-pressed]="hide">
-                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                  </button>
-                </mat-form-field>
-                <ion-row style="display: flex; justify-content: end;">
-                  <button class="purple-btn" type="submit" style="background-color: rgb(255, 65, 65);">
-                    <span>Conferma</span>
-                    <ion-icon style="font-size: 120%;" name="checkmark-circle-outline"></ion-icon>
-                  </button>
-                </ion-row>
-              </form>
-            </div>
-            <img id="border-spin" style="position: absolute; top:-40px; width: 800px; z-index: 1;"
-            src="../../../assets/images/3.png" alt="">
-          </div>
-        </div>
-
-      </div>
     </div>
 
   </div>

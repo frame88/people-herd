@@ -1,89 +1,51 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Modifica gruppo</ion-title>
+    <ion-title>Dettaglio gruppo</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content matRipple [matRippleColor]="central.color">
-  <div class="bicolor">
-    <div>
-      <button class="txt-capital purple-btn" routerLink="/tabs/gruppi">
-        <ion-icon name="arrow-back-outline"></ion-icon>
-        indietro
-      </button>
-    </div>
+  <div class="bicolor" style="display: flex; align-items: center;">
+    <button style="position: absolute; left: 0; top: 0;" class="txt-capital purple-btn" routerLink="/tabs/gruppi">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+      indietro
+    </button>
 
-      <div style="display: flex; justify-content: center; flex-wrap: wrap; width: 100vw;">
-        <div class="left">
-          <div id="card">
-            <div *ngFor="let group of central.groups">
-              <div id="header" *ngIf="group.id === this.iddi" style="position: relative;">
-                <div>
-                  <h1>{{group.name}}</h1>
-                  <h5 style="color: rgba(255, 255, 255, 0.897);">{{group.description}}</h5>
-                </div>
-                <img id="icon-mod" src="../../../assets/images/people-roof-solid.svg" alt="icon set group">
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; width: 100vw;">
+      <div class="left">
+        <div id="card">
+          <div *ngFor="let group of central.groups">
+            <div id="header" *ngIf="group.id === this.iddi" style="position: relative;">
+              <div>
+                <h1>{{group.name}}</h1>
+                <h5 style="color: rgba(255, 255, 255, 0.897);">{{group.description}}</h5>
               </div>
-              <div id="content" *ngIf="group.id === this.iddi">
-                <ul id="parametri">
-                  <li><span>Ruolo: </span><span>{{group.role}}</span></li>
-                  <li><span>id: </span><span>{{group.id}}</span></li>
-                </ul>
-                <span>partecipanti:</span>
-                <div *ngFor="let user of central.users" style="display: inline;">
-                  <div *ngIf="user.group === this.iddi" style="display: inline;">
-                    <ul id="partecipanti">
-                      <li>
-                        <h2 class="txt-capital" style="color: gray; display: inline; margin: 0; padding: 0;">
-                          {{user.name}} {{user.surname}}
-                        </h2>
-                      </li>
-                    </ul>
-                  </div>
+              <img id="icon-mod" src="../../../assets/images/people-roof-solid.svg" alt="icon set group">
+            </div>
+            <div id="content" *ngIf="group.id === this.iddi">
+              <ul id="parametri">
+                <li><span>Ruolo: </span><span>{{group.role}}</span></li>
+                <li><span>id: </span><span>{{group.id}}</span></li>
+              </ul>
+              <span>partecipanti:</span>
+              <div *ngFor="let user of central.users" style="display: inline;">
+                <div *ngIf="user.group === this.iddi" style="display: inline;">
+                  <ul id="partecipanti">
+                    <li>
+                      <h2 class="txt-capital" style="color: gray; display: inline; margin: 0; padding: 0;">
+                        {{user.name}} {{user.surname}}
+                      </h2>
+                    </li>
+                  </ul>
                 </div>
               </div>
-
             </div>
+
           </div>
-        </div>
-
-        <div class="right" style="margin: 0;">
-          <div style="display: flex;">
-            <div style="display: flex; justify-content: center; position: relative; padding: 3em;">
-              <div id="circle-form">
-                <form #g="ngForm" (submit)="central.editGroup(g, iddi)">
-                  <mat-form-field class="example-full-width">
-                    <mat-label>Rinomina gruppo</mat-label>
-                    <input matInput placeholder="Es. Dopolavoro" name="name" [ngModel]>
-                  </mat-form-field>
-                  <mat-form-field class="example-full-width">
-                    <mat-label>Nuova descrizione</mat-label>
-                    <textarea matInput placeholder="Es. Gruppo sportivo per..." name="description" [ngModel]></textarea>
-                  </mat-form-field>
-                  <mat-form-field appearance="fill">
-                    <mat-label>Nuovo ruolo</mat-label>
-                    <mat-select name="role" [ngModel]>
-                      <mat-option *ngFor="let role of central.roles" value="{{role.id}}">
-                        <span class="txt-capital">{{role.title}}</span>
-                      </mat-option>
-                    </mat-select>
-                  </mat-form-field>
-                  <ion-row style="display: flex; justify-content: end;">
-                    <button class="purple-btn" type="submit" style="background-color: rgb(255, 65, 65);">
-                      <span>Conferma</span>
-                      <ion-icon style="font-size: 120%;" name="checkmark-circle-outline"></ion-icon>
-                    </button>
-                  </ion-row>
-
-                </form>
-              </div>
-              <img id="border-spin" style="position: absolute; top: -40px; width: 800px; z-index: 1;"
-                src="../../../assets/images/3.png" alt="">
-            </div>
-          </div>
-
         </div>
       </div>
+
     </div>
+  </div>
 
 </ion-content>

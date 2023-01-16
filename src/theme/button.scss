@@ -12,4 +12,14 @@
       transform: scale(0.9);
       transition-duration: 0.2s;
     }
+  }
+
+  .confirm {
+    background-color: rgb(255, 65, 65) !important;
+
+    &:hover {
+      background-color: rgb(255, 65, 65) !important;
+      transform: scale(rgb(211, 53, 53));
+      transition-duration: 0.2s;
+    }
 }

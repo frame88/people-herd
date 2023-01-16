@@ -14,6 +14,18 @@ const routes: Routes = [
   {
     path: 'tabs/utenti/infoutente/:id',
     loadChildren: () => import('./infoutente/infoutente.module').then( m => m.infoutentePageModule)
+  },
+  {
+    path: 'nuovoutente',
+    loadChildren: () => import('./nuovoutente/nuovoutente.module').then( m => m.NuovoutentePageModule)
+  },
+  {
+    path: 'modificautente',
+    loadChildren: () => import('./modificautente/modificautente.module').then( m => m.ModificautentePageModule)
+  },
+  {
+    path: 'tabs/utenti/modificautente/:id',
+    loadChildren: () => import('./modificautente/modificautente.module').then( m => m.ModificautentePageModule)
   }
 
 ];

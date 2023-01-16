@@ -15,6 +15,8 @@ export class utentiPage implements OnInit {
     private http: HttpClient,
     private alertController: AlertController
   ) {
+    this.central.getGroups();
+    this.central.getRoles();
     this.central.getUsers();
   }
 

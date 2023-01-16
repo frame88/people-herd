@@ -10,9 +10,7 @@
 
 <ion-content [fullscreen]="true" matRipple [matRippleColor]="central.color">
   <div class="bicolor">
-    <!-- <div style="background-color: var(--aqua);width: 100px; height: 100vh; position: absolute; z-index: 0; margin-left: 10%; display: flex;"></div> -->
-
-    <img class="bg-img" src="../../assets/images/people-group-white.svg" alt="">
+    <img class="bg-img" src="../../assets/images/people-group-white.svg" alt="icon people group">
     <div *ngIf="central.error"
       style=" padding:1em ;text-align: center; color: white; background-color: rgb(255, 115, 115);">
       ERROR
@@ -22,41 +20,9 @@
 
     <div style="display: flex; flex-wrap: wrap;">
 
-      <button id="new-group-btn" class="purple-btn">
+      <button routerLink="./nuovogruppo" class="purple-btn">
         <ion-icon name="add-outline"></ion-icon>
           aggiungi un nuovo gruppo</button>
-      <ion-popover trigger="new-group-btn">
-        <ng-template>
-          <ion-content class="ion-padding">
-            <form #f="ngForm" (submit)="central.addGroup(f)" class="example-form">
-              <mat-form-field class="">
-                <mat-label>Nome gruppo</mat-label>
-                <input matInput placeholder="Es. Mario" name="name" [ngModel] required>
-              </mat-form-field>
-
-              <mat-form-field appearance="fill">
-                <mat-label>Ruolo gruppo</mat-label>
-                <mat-select name="role" [ngModel] required>
-                  <mat-option *ngFor="let role of central.roles" value="{{role.id}}" class="txt-capital">{{role.title}}</mat-option>
-                </mat-select>
-              </mat-form-field>
-
-              <mat-form-field>
-                <mat-label>Descrizione...</mat-label>
-                <textarea matInput placeholder="Es. Gruppo sportivo per..." name="description" [ngModel]></textarea>
-              </mat-form-field>
-
-
-              <button class="purple-btn" type="submit" style="margin: 0;">
-                Conferma
-                <ion-icon style="font-size: 120%;" name="checkmark-circle-outline"></ion-icon>
-              </button>
-            </form>
-
-          </ion-content>
-        </ng-template>
-      </ion-popover>
-
     </div>
 
     <table cdkDrag>
@@ -73,8 +39,9 @@
         <td [routerLink]="['tabs/gruppi/infogruppo', group.id]">Gruppo {{group.name}}</td>
         <td [routerLink]="['tabs/gruppi/infogruppo', group.id]" class="pdr">{{group.description}}</td>
         <td [routerLink]="['tabs/gruppi/infogruppo', group.id]">{{group.role}}</td>
-        <td (click)="central.deleteGroups(group)">
-          <ion-icon *ngIf="group.role > 3 || group.role === null ? 'none' : null" class="trash" name="trash-outline" [style.display]=""></ion-icon>
+        <td>
+          <ion-icon [routerLink]="['tabs/gruppi/modificagruppo', group.id]" *ngIf="group.role > 3 || group.role === null ? 'none' : null" class="pencil" name="pencil-outline"></ion-icon>
+          <ion-icon (click)="central.deleteGroups(group)" *ngIf="group.role > 3 || group.role === null ? 'none' : null" class="trash" name="trash-outline"></ion-icon>
         </td>
       </tr>
     </table>

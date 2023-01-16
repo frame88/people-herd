@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nuovo gruppo </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content matRipple [matRippleColor]="central.color">
+  <div class="bicolor" style="display: flex; align-items: center; justify-content: center;">
+    <button style="position: absolute; left: 0; top: 0;" class="txt-capital purple-btn" routerLink="/tabs/gruppi">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+      indietro
+    </button>
+
+    <div style="display: flex;" class="ion-margin">
+      <div id="circle-form">
+        <form #f="ngForm" (submit)="central.addGroup(f)" class="example-form">
+          <mat-form-field>
+            <mat-label>Nome gruppo</mat-label>
+            <input matInput placeholder="Es. Mario" name="name" [ngModel] required>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Ruolo gruppo</mat-label>
+            <mat-select name="role" [ngModel] required>
+              <mat-option *ngFor="let role of central.roles" value="{{role.id}}"
+                class="txt-capital">{{role.title}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Descrizione...</mat-label>
+            <textarea matInput placeholder="Es. Gruppo sportivo per..." name="description" [ngModel]></textarea>
+          </mat-form-field>
+
+
+          <button class="purple-btn confirm" type="submit" style="margin: 0;">
+            Conferma
+            <ion-icon style="font-size: 120%;" name="checkmark-circle-outline"></ion-icon>
+          </button>
+        </form>
+      </div>
+      <img id="border-spin" style="position: absolute; top: -40px; width: 800px; z-index: 1;"
+        src="../../../assets/images/3.png" alt="">
+    </div>
+  </div>
+
+</ion-content>
+
