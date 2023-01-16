@@ -8,8 +8,7 @@
 
 
 
-<ion-content [fullscreen]="true" matRipple [matRippleColor]="central.color"
->
+<ion-content [fullscreen]="true">
   <div class="bicolor">
     <img src="../../assets/images/shield.svg" class="bg-img" alt="">
 
@@ -21,7 +20,7 @@
     </div>
 
     <div style="display: flex; flex-wrap: wrap;">
-      <button id="new-role-btn" class="ion-margin purple-btn" style="text-transform: uppercase;">
+      <button matRipple [matRippleColor]="central.color" id="new-role-btn" class="ion-margin purple-btn" style="text-transform: uppercase;">
         <ion-icon name="add-outline"></ion-icon>
         aggiungi un nuovo ruolo
       </button>
@@ -39,7 +38,7 @@
                 <input matInput placeholder="Es. Ruolo di dipendenti" name="description" [ngModel]>
               </mat-form-field>
 
-              <button class="purple-btn confirm" type="submit" style="margin: 0;">
+              <button matRipple [matRippleColor]="central.color" class="purple-btn confirm" type="submit" style="margin: 0;">
                 Conferma
                 <ion-icon style="font-size: 120%;" name="checkmark-circle-outline"></ion-icon>
               </button>
@@ -51,7 +50,7 @@
 
     </div>
 
-    <table cdkDrag>
+    <table cdkDrag matRipple [matRippleColor]="central.color">
       <tr class="labels">
         <th *ngFor="let i of central.roles_labels">
           <span>{{i}}</span>

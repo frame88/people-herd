@@ -1,12 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>nuovoutente</ion-title>
+    <ion-title>Nuovo utente</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content matRipple [matRippleColor]="central.color">
+<ion-content>
   <div class="bicolor" style="display: flex; justify-content: center; align-items: center;">
-    <button style="position: absolute; left: 0; top: 0;" class="txt-capital purple-btn" routerLink="/tabs/utenti">
+    <button matRipple [matRippleColor]="central.color" style="position: absolute; left: 0; top: 0;" class="txt-capital purple-btn" routerLink="/tabs/utenti">
       <ion-icon name="arrow-back-outline"></ion-icon>
       indietro
     </button>
@@ -32,7 +32,7 @@
             <mat-label>Mail</mat-label>
             <input matInput placeholder="Es. mario.rossi@gmail.com" name="mail" [ngModel]>
           </mat-form-field>
-          <button type="submit" class="purple-btn confirm" style="margin: 0;">
+          <button matRipple [matRippleColor]="central.color" type="submit" class="purple-btn confirm" style="margin: 0;">
             Conferma
             <ion-icon style="font-size: 120%;" name="checkmark-circle-outline"></ion-icon>
           </button>

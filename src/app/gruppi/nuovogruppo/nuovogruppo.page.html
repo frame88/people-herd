@@ -4,9 +4,9 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content matRipple [matRippleColor]="central.color">
+<ion-content>
   <div class="bicolor" style="display: flex; align-items: center; justify-content: center;">
-    <button style="position: absolute; left: 0; top: 0;" class="txt-capital purple-btn" routerLink="/tabs/gruppi">
+    <button matRipple [matRippleColor]="central.color" style="position: absolute; left: 0; top: 0;" class="txt-capital purple-btn" routerLink="/tabs/gruppi">
       <ion-icon name="arrow-back-outline"></ion-icon>
       indietro
     </button>
@@ -33,7 +33,7 @@
           </mat-form-field>
 
 
-          <button class="purple-btn confirm" type="submit" style="margin: 0;">
+          <button matRipple [matRippleColor]="central.color" class="purple-btn confirm" type="submit" style="margin: 0;">
             Conferma
             <ion-icon style="font-size: 120%;" name="checkmark-circle-outline"></ion-icon>
           </button>

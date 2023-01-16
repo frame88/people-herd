@@ -4,12 +4,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content scrollbar matRipple [matRippleColor]="central.color"
->
+<ion-content scrollbar>
 
   <div class="bicolor" style="height: 100vh;">
     <div>
-      <button class="txt-capital purple-btn" routerLink="/tabs/utenti">
+      <button matRipple [matRippleColor]="central.color" class="txt-capital purple-btn" routerLink="/tabs/utenti">
         <ion-icon name="arrow-back-outline"></ion-icon>
         indietro
       </button>

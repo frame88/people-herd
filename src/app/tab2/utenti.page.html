@@ -6,8 +6,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" matRipple [matRippleColor]="central.color"
->
+<ion-content [fullscreen]="true">
   <div class="bicolor">
     <img src="../../assets/images/monopeople.svg" class="bg-img" alt="">
     <div *ngIf="central.error" style=" padding:1em ;text-align: center; color: white; background-color: rgb(255, 115, 115);">
@@ -16,13 +15,13 @@
     </div>
     <div style="display: flex; flex-wrap: wrap;">
 
-      <button routerLink="./nuovoutente" class="purple-btn ion-margin">
+      <button matRipple [matRippleColor]="central.color" routerLink="./nuovoutente" class="purple-btn ion-margin" matRipple [matRippleColor]="central.color">
         <ion-icon name="add-outline"></ion-icon>
         aggiungi un nuovo utente</button>
 
     </div>
 
-    <table cdkDrag>
+    <table cdkDrag matRipple [matRippleColor]="central.color">
       <tr class="labels">
         <th *ngFor="let i of central.users_labels">
           <div class="sticker">
