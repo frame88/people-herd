@@ -6,7 +6,7 @@
 
 <ion-content>
   <div class="bicolor" style="display: flex; align-items: center; justify-content: center;">
-    <button matRipple [matRippleColor]="central.color" style="position: absolute; left: 0; top: 0;" class="txt-capital purple-btn" routerLink="/tabs/gruppi">
+    <button matRipple [matRippleColor]="central.color" style="position: absolute; left: 0; top: 0; z-index: 1;" class="txt-capital purple-btn" routerLink="/tabs/gruppi">
       <ion-icon name="arrow-back-outline"></ion-icon>
       indietro
     </button>
@@ -39,7 +39,7 @@
           </button>
         </form>
       </div>
-      <img id="border-spin" style="position: absolute; top: -40px; width: 800px; z-index: 1;"
+      <img id="border-spin" style="position: absolute; top: -40px; width: 800px; z-index: 0;"
         src="../../../assets/images/3.png" alt="">
     </div>
   </div>
