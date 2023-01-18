@@ -1,3 +1,5 @@
+
+
 .bicolor-reverse {
   height: 100%;
   // background-color: white;
@@ -41,6 +43,15 @@
     margin-top: 0.3em;
     letter-spacing: 3px;
   }
+
+  ion-label {
+    color: #0093E9;
+    letter-spacing: 3px;
+    margin-top: 10px;
+  }
+
+  animation-name: changecardw;
+  animation-duration: 5s;
 
   display: flex;
   justify-content: center;
@@ -97,3 +108,32 @@ ion-input.custom {
   --border-bottom: 1px solid black;
 }
 
+@keyframes changecardw {
+  0% {
+    width: 0%;
+    background-color: rgba(255, 255, 255, 0.308);
+  }
+
+  10% {
+    width: 10%;
+    background-color: rgba(255, 255, 255, 0.548);
+  }
+
+  20% {
+    width: 20%;
+    background-color: rgba(255, 255, 255, 0.74);
+  }
+}
+
+@media screen and (max-width: 1350px) {
+
+  .form-card {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 600px) {
+
+  .form-card {
+    width: 80%;
+  }
+}
