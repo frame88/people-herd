@@ -23,6 +23,14 @@
   position: relative;
 }
 
+#filter {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 255, 0.192);
+  animation-name: changefilter;
+  animation-duration: 5s;
+}
+
 
 .form-card {
   #logo {
@@ -51,7 +59,7 @@
   }
 
   animation-name: changecardw;
-  animation-duration: 5s;
+  animation-duration: 10s;
 
   display: flex;
   justify-content: center;
@@ -89,6 +97,7 @@
       transition-duration: 0.3s;
     }
   }
+
 }
 
 
@@ -125,6 +134,29 @@ ion-input.custom {
   }
 }
 
+#filter {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 255, 0.192);
+}
+
+@keyframes changefilter {
+  0% {
+    height: 0%;
+    background-color: rgba(0, 0, 255, 0.050);
+  }
+
+  10% {
+    height: 10%;
+    background-color: rgba(0, 0, 255, 0.100);
+  }
+
+  20% {
+    height: 20%;
+    background-color: rgba(0, 0, 255, 0.150);
+  }
+}
+
 @media screen and (max-width: 1350px) {
 
   .form-card {
@@ -135,5 +167,6 @@ ion-input.custom {
 
   .form-card {
     width: 80%;
+    animation-duration: 5s;
   }
 }
