@@ -23,13 +23,13 @@
 }
 
 #circle-form {
+  height: 100%;
   z-index: 2;
   box-shadow: 5px 10px 15px #00000062;
   padding: 25px;
   border-radius: 10px;
   background-color: var(--glass_filter);
 }
-
 //password field
 .example-container mat-form-field+mat-form-field {
     margin-left: 8px;

@@ -1,6 +1,6 @@
 import { IUser } from "./IUser";
 
-export interface IGroupOBjectResponse {
+export interface IUserObjectResponse {
     success: boolean;
     data: IUser[];
 }

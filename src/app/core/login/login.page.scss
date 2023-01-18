@@ -26,9 +26,10 @@
 #filter {
   width: 100%;
   height: 100%;
+  background-color: rgba(255, 0, 0, 0.192);
   background-color: rgba(0, 0, 255, 0.192);
   animation-name: changefilter;
-  animation-duration: 5s;
+  animation-duration: 3s;
 }
 
 
@@ -126,26 +127,22 @@ ion-input.custom {
 
 }
 
-#filter {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 255, 0.192);
-}
 
 @keyframes changefilter {
   0% {
     width: 0%;
-    background-color: rgba(0, 0, 255, 0.050);
+    background-color: rgba(255, 0, 0, 0.050);
   }
 
   10% {
     width: 10%;
-    background-color: rgba(0, 0, 255, 0.100);
+    background-color: rgba(255, 0, 0, 0.100);
+
   }
 
   20% {
     width: 20%;
-    background-color: rgba(0, 0, 255, 0.150);
+    background-color: rgba(255, 0, 0, 0.150);
   }
 }
 
@@ -156,7 +153,6 @@ ion-input.custom {
   }
 }
 @media screen and (max-width: 600px) {
-
   .form-card {
     width: 80%;
     height: 80%;

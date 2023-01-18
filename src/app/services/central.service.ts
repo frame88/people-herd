@@ -60,6 +60,18 @@ export class CentralService {
     );
   }
 
+  /* NUOVA CHIAMATA HAREB
+  getRoles() {
+  this.http.get<IRoleObjectResponse>(`${this.urlMalek}Role`)
+  .subscribe((result: IRoleObjectResponse) => {
+      console.log('ruoli: ', result);
+      this.rolesMalek = result;
+    },
+      err => this.error = err
+    );
+  }
+*/
+
   //_______POST
   addUsers(form: NgForm) {
     this.http.post<IUsers>(`${this.url}/users`, form.value)

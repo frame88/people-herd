@@ -1,6 +1,6 @@
 import { IRole } from "./IRole";
 
-export interface IGroupOBjectResponse {
+export interface IRoleObjectResponse {
     success: boolean;
     data: IRole[];
 }

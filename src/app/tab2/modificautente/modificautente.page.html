@@ -6,15 +6,16 @@
 
 <ion-content>
   <div class="bicolor" style="display: flex; justify-content: center; align-items: center;">
-      <button matRipple [matRippleColor]="central.color" style="position: absolute; left: 0; top: 0; z-index: 1;" class="txt-capital purple-btn" routerLink="/tabs/utenti">
+      <button matRipple [matRippleColor]="central.color"
+      style="position: absolute; left: 0; top: 0; z-index: 1;" class="txt-capital purple-btn" routerLink="/tabs/utenti">
         <ion-icon name="arrow-back-outline"></ion-icon>
         indietro
       </button>
       <div class="container-form">
-        <div style="display: flex;">
+        <div>
           <div style="display: flex; justify-content: center; position: relative; padding: 3em;">
             <div id="circle-form">
-  
+
               <form #g="ngForm" (submit)="central.edit(g, iddi)">
                 <mat-form-field class="example-full-width">
                   <mat-label>Nome</mat-label>
