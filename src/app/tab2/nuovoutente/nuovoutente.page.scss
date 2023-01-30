@@ -1,0 +1,11 @@
+.container-max {
+  display: flex;
+  position: absolute;
+}
+
+#border-spin {
+  position: relative;
+  width: 800px;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+}

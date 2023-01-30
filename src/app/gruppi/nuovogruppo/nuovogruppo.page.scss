@@ -3,6 +3,14 @@ mat-form-field {
 }
 
 .bicolor {
-  overflow-y: hidden;
+  height: 100%;
+  overflow: hidden!important;
 }
 
+#border-spin {
+  position: relative;
+  width: 800px;
+  z-index: 0;
+  top: 15%;
+  transform: translate(-50%, -50%);
+}

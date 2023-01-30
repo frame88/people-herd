@@ -11,7 +11,7 @@
       indietro
     </button>
 
-    <div style="display: flex;" class="ion-margin">
+    <div class="container-max ion-margin">
       <div id="circle-form">
         <form #f="ngForm" (submit)="central.addUsers(f)" class="example-form">
           <input type="number" placeholder="Id gruppo" name="group" min="1" max="" [ngModel]
@@ -38,9 +38,9 @@
           </button>
         </form>
       </div>
-      <img id="border-spin" style="position: absolute; top: -40px; width: 800px; z-index: 0;"
-        src="../../../assets/images/3.png" alt="">
     </div>
+    <img id="border-spin"
+      src="../../../assets/images/3.png" alt="">
 
 
 

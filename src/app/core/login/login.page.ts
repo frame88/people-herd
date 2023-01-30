@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -6,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+
   hide = true;
-  constructor() { }
+
+  constructor(
+    private router: Router,
+    private navCtrl: NavController
+  ) { }
 
   ngOnInit() {
   }

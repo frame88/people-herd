@@ -8,17 +8,22 @@
   <div class="bicolor-reverse">
     <div id="filter"></div>
   </div>
-  <div class="form-card">
-    <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-bottom: 2em;">
-      <img id="intell" src="../../../assets/images/intellitronika-symbol.svg" alt="">
-      <div id="under-img"></div>
-      <h1>login</h1>
+  <div>
+    <div class="form-card">
+      <div id="north-side">
+        <img id="intell" src="../../../assets/images/intellitronika-symbol.svg" alt="">
+        <div id="under-img"></div>
+        <h1>login</h1>
+      </div>
+      <div style="width: 100%; display: flex; align-items: center; flex-direction: column;">
+        <ion-label>Nome utente</ion-label>
+        <ion-input placeholder="nome.cognome" class="custom"></ion-input>
+        <ion-label>Password</ion-label>
+        <ion-input placeholder="password" type="password" class="custom"></ion-input>
+        <button id="enter">entra</button>
+      </div>
+
     </div>
-    <ion-label>Nome utente</ion-label>
-    <ion-input placeholder="nome.cognome" class="custom"></ion-input>
-    <ion-label>Password</ion-label>
-    <ion-input placeholder="Password aziendale" type="password" class="custom"></ion-input>
-    <button id="enter">entra</button>
   </div>
 
 </ion-content>
